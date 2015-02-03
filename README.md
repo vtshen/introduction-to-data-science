@@ -1,4 +1,4 @@
-<center>Introduction of Data Science </center>
+<center>Introduction to Data Science </center>
 ===========
 
 
