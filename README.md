@@ -393,7 +393,7 @@
     - the order of items is unpredictable
     - global variable
         - to reassign a global variable **inside a function** we need to **declare** the global variable before you use it, e.g.
-        ```
+        ```python
         count = 0
         
         def example():
@@ -406,7 +406,7 @@
     - tuples are immutable
     - variable-length argument tuples
         - the parameters should begin with '*', e.g.
-        ```
+        ```python
         def printall(*args):
             print(args)
         ```
