@@ -370,6 +370,10 @@
 
 ### Lesson 2: Introduction to Python Programming
 
+- reference for python
+    - http://www.diveintopython3.net/index.html
+    - http://faculty.stedwards.edu/mikek/python/thinkpython.pdf
+
 ### Lesson 3: Python Functions
 
 ## Week 4: Introduction to Python Programming
@@ -386,4 +390,46 @@
     - when a list is used as an argument, it is **passed by reference**, so it may be modified in the process
     
 - dictionaries
-    - 
+    - the order of items is unpredictable
+    - global variable
+        - to reassign a global variable **inside a function** we need to **declare** the global variable before you use it, e.g.
+        ```
+        count = 0
+        
+        def example():
+            global count # in this way, count will be referred to the global variable within this function
+            count += 1
+        ```
+    - `hash` function
+    
+- tuples
+    - tuples are immutable
+    - variable-length argument tuples
+        - the parameters should begin with '*', e.g.
+        ```
+        def printall(*args):
+            print(args)
+        ```
+    - lists and tuples
+        - `zip`
+    - dictionaries and tuples
+        - `items`
+    - sequences of sequences
+    
+### Lesson 2: Working with the Underlying File System
+
+- files
+    - reading from text files
+        - character encoding
+        - `open`, `read`, `seek`, `close`
+        - closing files automatically
+            - `try...finally` approach: good
+            - `with` approach: better! see this example:
+            ```
+            with open("temp.txt") as a_file:
+                a_file.seek(17)
+                a_character = a_file.read(1)
+                print(a_character)
+            # when this block ends, the with statement will close the file automatically, no matter what exception happens
+            ```
+            
