@@ -1,7 +1,6 @@
 <center>Introduction to Data Science </center>
 ===========
 
-
 [TOC]
 
 ## Week 1: Introduction to Unix
@@ -373,3 +372,18 @@
 
 ### Lesson 3: Python Functions
 
+## Week 4: Introduction to Python Programming
+
+### Lessom 1: Python Data Structures
+
+- string
+
+- lists
+    - note that list is mutable, while string is immutable
+    - shallow copy and deep copy of a list
+        - shallow copy: `b = a`
+        - deep copy: `b = a[:]`
+    - when a list is used as an argument, it is **passed by reference**, so it may be modified in the process
+    
+- dictionaries
+    - 
