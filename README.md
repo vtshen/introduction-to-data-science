@@ -425,7 +425,7 @@
         - closing files automatically
             - `try...finally` approach: good
             - `with` approach: better! see this example:
-            ```
+            ```python
             with open("temp.txt") as a_file:
                 a_file.seek(17)
                 a_character = a_file.read(1)
