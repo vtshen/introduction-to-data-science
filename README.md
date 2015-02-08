@@ -461,4 +461,32 @@
         
 ### Lesson 3: Advanced Concepts
 
-- 
+- comprehensions
+    - working with files and directories
+        - `os`, `os.path` module
+    - list/directory/set comprehensions
+        ```python
+        a = range(10)
+        [element ** 2 for element in a if element > 5]
+        ```
+
+- regular expressions
+    - an example: matching phone numbers
+    ```python
+    import re
+    phonePattern = re.compile(r'^\D*(\d{3})\D*(\d{3})\D*(\d{4})\D*(\d*)$') # \D matches any non-numeric character, \D* is used as an optional separator
+    phonePattern.search('(800)123-3453 ext 1234').groups() # groups patterns in the string
+    ```
+    
+- classes and objects
+    
+- classes and functions
+    
+- classes and methods
+    - some special methods: `__init__`, `__str__`
+    - operator overloading: e.g. `__add__`
+    - type-based dispatch
+    - polymorphic functions: functions that can work with several types
+    
+- inheritance
+    
