@@ -432,4 +432,33 @@
                 print(a_character)
             # when this block ends, the with statement will close the file automatically, no matter what exception happens
             ```
-            
+        - read one line at a time
+    - writing into text files
+        - two modes: `a`, `w`
+    - binary files
+    - stream objects from non-file sources
+        - handling string
+        ```python
+        a = 'hello'
+        import io
+        b = io.StringIO(a)
+        b.write('df') # modify the first two characters of this string
+        b.seek(0) # go to the beginning of this string
+        b.read()
+        b.write('df') # now append 'df' to the end of this string
+        b.seek(0) 
+        b.read()
+        ```
+        - handling compressed files
+    - standard input, output and error
+        - `sys.stdin`, `sys.stdout`, `sys.stderr`: similar to those in Linux (see "redirection" in Week 1 Lesson 3), see example:
+        ```python
+        import sys
+        sys.stdout.write("abc")
+        sys.stderr.write("dfsfsd")
+        ```
+        - redirecting standard output
+        
+### Lesson 3: Advanced Concepts
+
+- 
