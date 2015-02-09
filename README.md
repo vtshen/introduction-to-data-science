@@ -483,10 +483,9 @@
 - classes and functions
     
 - classes and methods
-    - some special methods: `__init__`, `__str__`
+    - some special methods: `__init__`, `__str__`, `__doc__`, `__iter__`, `__next__` (the last two are for **iterators**)
     - operator overloading: e.g. `__add__`
     - type-based dispatch
     - polymorphic functions: functions that can work with several types
     
 - inheritance
-    
