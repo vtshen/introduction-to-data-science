@@ -489,3 +489,19 @@
     - polymorphic functions: functions that can work with several types
     
 - inheritance
+
+## Week 5: Introduction to Visualization
+
+### Lesson 1: Introduction to Numpy
+
+- the basics
+    - the Numpy's main object is the **homogeneous multidimensional array**, it belongs to class `numpy.ndarray` (or `numpy.array`)
+    - attributes of array: `ndim, shape, size, dtype, itemsize, data`
+    - creating array: `array([1,2,4])`, `zeros`, `linspace`, `arange`, `reshape`, etc
+    - basic operations
+    - universal functions: `sin, cos, exp`, etc
+    - indexing, slicing and iterating
+    
+- shape manipulation
+    - changing the shape of an array
+    
