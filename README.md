@@ -527,7 +527,7 @@
 
 - pyplot tutorial
     - the basics
-        - ```python
+        ```python
         %matplotlib inline
         import numpy as np, matplotlib.pyplot as plt
         fig, ax = plt.subplots() # create a figure and axes for plotting
