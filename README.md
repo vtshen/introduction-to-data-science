@@ -496,12 +496,59 @@
 
 - the basics
     - the Numpy's main object is the **homogeneous multidimensional array**, it belongs to class `numpy.ndarray` (or `numpy.array`)
-    - attributes of array: `ndim, shape, size, dtype, itemsize, data`
+    - attributes of array: `ndim`, `shape`, `size`, `dtype`, `itemsize`, `data`
     - creating array: `array([1,2,4])`, `zeros`, `linspace`, `arange`, `reshape`, etc
     - basic operations
-    - universal functions: `sin, cos, exp`, etc
+    - universal functions: `sin`, `cos`, `exp`, etc
     - indexing, slicing and iterating
+        - boolean indexing
+        ```python
+        import numpy
+        A = numpy.arange(10)
+        c = (A < 5) & (A > 1)
+        A[c]
+        ```
+        - list-of-locations indexing
     
 - shape manipulation
     - changing the shape of an array
+        - `ravel()`, `transpose()`, `resize()`, `reshape()`
+    - stacking together different arrays
+        - `hstack`, `vstack`, `column_stack`, `row_stack`
+    - splitting one array into several smaller ones
     
+- copies and views
+    - no copy at all: same array object
+        - `b = a` (we can see `b` as a new pointer to object referred by `a`)
+    - `view` or shallow copy: different array objects, share the same data
+    - deep copy: different array objects and different copies of data
+    
+### Lesson 2: Introduction to Python Plotting with Matplotlib
+
+- pyplot tutorial
+    - the basics
+        - ```python
+        %matplotlib inline
+        import numpy as np, matplotlib.pyplot as plt
+        fig, ax = plt.subplots() # create a figure and axes for plotting
+        x = np.arange(0, 10, .1)
+        ax.plot(x, x ** 2, '-')
+        plt.show()
+        ```
+    - controlling line properties
+    - working with multiple figures and axes
+        - note that Matlab and pyplot have the concept of **the current figure and the current axes**
+    - working with text
+        - using mathematical expressions in text
+        - annotating text
+    - saving your plot
+    - scatter plots
+    - labeling data
+    - reference
+        - http://matplotlib.org/users/pyplot_tutorial.html
+        - http://nbviewer.ipython.org/github/ProfessorBrunner/lcdm-info/blob/master/info490nb/info490w5m1.ipynb
+        - http://nbviewer.ipython.org/github/ProfessorBrunner/lcdm-info/blob/master/info490nb/info490w5m2.ipynb
+        
+### Lesson 3: Making Data Visualizations in Python
+
+- histograms
