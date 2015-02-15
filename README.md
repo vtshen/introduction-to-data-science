@@ -552,3 +552,15 @@
 ### Lesson 3: Making Data Visualizations in Python
 
 - histograms
+    - binning
+        - options: number, center, color, etc
+    - four types: `bar`, `barstacked`, `step`, `stepfilled`
+    - logarithm plot: `log` option
+    - probability: `normed` option
+    - multiple histograms
+        - overlap multiple histograms
+        - plot multiple histograms side by side
+    - return values of `hist`: `n, bins, patches`
+    - reference
+        - http://nbviewer.ipython.org/github/ProfessorBrunner/lcdm-info/blob/master/info490nb/info490w5m3.ipynb
+        
