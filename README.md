@@ -527,14 +527,14 @@
 
 - pyplot tutorial
     - the basics
-        ```python
-        %matplotlib inline
-        import numpy as np, matplotlib.pyplot as plt
-        fig, ax = plt.subplots() # create a figure and axes for plotting
-        x = np.arange(0, 10, .1)
-        ax.plot(x, x ** 2, '-')
-        plt.show()
-        ```
+    ```python
+    %matplotlib inline
+    import numpy as np, matplotlib.pyplot as plt
+    fig, ax = plt.subplots() # create a figure and axes for plotting
+    x = np.arange(0, 10, .1)
+    ax.plot(x, x ** 2, '-')
+    plt.show()
+    ```
     - controlling line properties
     - working with multiple figures and axes
         - note that Matlab and pyplot have the concept of **the current figure and the current axes**
