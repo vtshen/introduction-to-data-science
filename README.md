@@ -526,28 +526,47 @@
 ### Lesson 2: Introduction to Python Plotting with Matplotlib
 
 - pyplot tutorial
-    - the basics
-    ```python
-    %matplotlib inline
-    import numpy as np, matplotlib.pyplot as plt
-    fig, ax = plt.subplots() # create a figure and axes for plotting
-    x = np.arange(0, 10, .1)
-    ax.plot(x, x ** 2, '-')
-    plt.show()
-    ```
+    - two kinds of API
+        - MATLAB API
+            - easy to use for simple plots, but not recommended
+            ```python
+            import matplotlib.pyplot as plt
+            x = plt.linspace(0, 5, 10)
+            y = x ** 2
+            plt.figure()
+            plt.plot(x, y, 'r')
+            plt.xlabel('x')
+            plt.ylabel('y')
+            plt.title('title')
+            plt.show()
+            ```
+        - matplotlib object-oriented API
+            - recommended, more powerful
+            - key idea: no objects, no program states should be **global**, much better especially when there are multiple figures
+            ```python
+            %matplotlib inline
+            import numpy as np, matplotlib.pyplot as plt
+            fig, ax = plt.subplots() # create a figure and axes for plotting
+            x = np.arange(0, 10, .1)
+            ax.plot(x, x ** 2, '-')
+            plt.show()
+            ```
     - controlling line properties
     - working with multiple figures and axes
         - note that Matlab and pyplot have the concept of **the current figure and the current axes**
     - working with text
         - using mathematical expressions in text
         - annotating text
-    - saving your plot
+    - saving your plot: `savefig`
     - scatter plots
-    - labeling data
+    - legends, labels and titles
+    - formatting text: LaTeX, fontsize, font family
+        - when using LaTeX, we should use raw text strings, like `label = r"\alpha^2"` instead of `label = "\alpha^2"`
     - reference
-        - http://matplotlib.org/users/pyplot_tutorial.html
+        - http://matplotlib.org/users/pyplot_tutorial.html (mainly about MATLAB API)
         - http://nbviewer.ipython.org/github/ProfessorBrunner/lcdm-info/blob/master/info490nb/info490w5m1.ipynb
-        - http://nbviewer.ipython.org/github/ProfessorBrunner/lcdm-info/blob/master/info490nb/info490w5m2.ipynb
+        - http://nbviewer.ipython.org/github/ProfessorBrunner/lcdm-info/blob/master/info490nb/info490w5m2.ipynb (about scatter plots)
+        - http://nbviewer.ipython.org/github/jrjohansson/scientific-python-lectures/blob/master/Lecture-4-Matplotlib.ipynb (very detailed instructions about matplotlib plotting)
         
 ### Lesson 3: Making Data Visualizations in Python
 
@@ -558,9 +577,17 @@
     - logarithm plot: `log` option
     - probability: `normed` option
     - multiple histograms
-        - overlap multiple histograms
+        - overlap multiple histograms (use `alpha` option when needed)
         - plot multiple histograms side by side
     - return values of `hist`: `n, bins, patches`
     - reference
         - http://nbviewer.ipython.org/github/ProfessorBrunner/lcdm-info/blob/master/info490nb/info490w5m3.ipynb
+        
+- seaborn plotting
+    - 
+        
+- data looks better naked
+    - remove redundancy!
+    - reference
+        - http://darkhorseanalytics.com/blog/data-looks-better-naked/
         
