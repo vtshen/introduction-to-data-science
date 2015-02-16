@@ -561,7 +561,7 @@
     - scatter plots
     - legends, labels and titles
     - formatting text: LaTeX, fontsize, font family
-        - when using LaTeX, we should use raw text strings, like `label = r"\alpha^2"` instead of `label = "\alpha^2"`
+        - when using LaTeX, we should use raw text strings, like `label = r"$\alpha^2$"` instead of `label = "$\alpha^2$"`
     - reference
         - http://matplotlib.org/users/pyplot_tutorial.html (mainly about MATLAB API)
         - http://nbviewer.ipython.org/github/ProfessorBrunner/lcdm-info/blob/master/info490nb/info490w5m1.ipynb
