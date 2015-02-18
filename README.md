@@ -583,8 +583,8 @@
     - reference
         - http://nbviewer.ipython.org/github/ProfessorBrunner/lcdm-info/blob/master/info490nb/info490w5m3.ipynb
         
-- seaborn plotting
-    - 
+- seaborn
+    - `matplotlib` is useful, but not very satisfactory, `seaborn` provides an API on top of `matplotlib` which uses sane plot & color defaults, uses simple functions for common statistical plot types, and which integrates with the functionality provided by `pandas` dataframes.
         
 - data looks better naked
     - remove redundancy!
