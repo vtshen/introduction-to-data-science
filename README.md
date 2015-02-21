@@ -617,7 +617,7 @@
         - `concat`
         - `merge`
         - `append`
-    - grouping: `groupby`
+    - grouping: `groupby`, `aggregate`
     - reshaping
     - time series
     - categoricals
@@ -633,3 +633,11 @@
 ### Lesson 2: Data Manipulation and Analysis
 
 - 
+
+### Lesson 3: Summary Statistics
+
+- think stats
+    - statistical thinking for programmers
+        - 
+    - reference
+        - http://www.greenteapress.com/thinkstats/thinkstats.pdf
