@@ -501,7 +501,7 @@
     - basic operations
     - universal functions: `sin`, `cos`, `exp`, etc
     - indexing, slicing and iterating
-        - boolean indexing
+        - boolean indexing (also very useful in `pandas`)
         ```python
         import numpy
         A = numpy.arange(10)
@@ -591,3 +591,45 @@
     - reference
         - http://darkhorseanalytics.com/blog/data-looks-better-naked/
         
+## Week 6: Introduction to Data Analysis in Python
+
+### Lesson 1: Data Access and Selection
+
+- pandas overview
+    - basic data structure: Series, TimeSeries, DataFrame, Panel
+        - built on top of `NumPy`, so they are fast
+        - DataFrame is the container for Series, and Panel is the container for DataFrame
+    - mutability and copying of data
+        - all pandas data structures are **value-mutable** but not always **size-mutable**
+    - object creation
+    - viewing data
+    - selection
+        - standard numpy/python way of selecting data
+            - selection by label, position, boolean indexing etc
+        - pandas access methods: `.at`, `.iat`, `.loc`, `.iloc`, `.ix`
+    - missing data: `np.nan`
+    - operations
+        - stats
+        - applying functions to data: `apply`
+        - histogramming: `value_counts`
+        - string methods
+    - merge
+        - `concat`
+        - `merge`
+        - `append`
+    - grouping: `groupby`
+    - reshaping
+    - time series
+    - categoricals
+    - plotting
+    - getting data in/out from csv files
+        - load data using `pd.read_csv` function (specifying separators, encoding, date forms etc.)
+    - reference
+        - http://pandas.pydata.org/pandas-docs/stable/overview.html (brief overview)
+        - http://www.gregreda.com/2013/10/26/intro-to-pandas-data-structures/ (detailed discussion of data structures)
+        - http://pandas.pydata.org/pandas-docs/stable/10min.html (a good introduction to various features in pandas in 10 mins)
+        - https://github.com/jvns/pandas-cookbook (chapter 1 & 2 here)
+        
+### Lesson 2: Data Manipulation and Analysis
+
+- 
