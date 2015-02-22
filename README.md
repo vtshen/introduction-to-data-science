@@ -632,7 +632,23 @@
         
 ### Lesson 2: Data Manipulation and Analysis
 
-- 
+- some examples
+    - Which borough has the most noise complaints (or, more selecting data)
+        - boolean indexing
+        - `value_counts`
+    - Find out on which weekday people bike the most with `groupby` and `aggregate`
+        - two arguments when parsing dates: `parse_dates=['Date'], dayfirst=True`, so that we can use the functionality related to dates and time
+        - use of `groupby` and `aggregate`: `weekday_counts = berri_bikes.groupby('weekday').aggregate(sum)`
+    - Combining dataframes and scraping Canadian weather data
+        - clear null data: `weather_mar2012.dropna(axis=1, how='any')` (drop any data that are emtpy, `axis = 1` means drop columns instead of rows)
+        - drop data: `weather_mar2012.drop(['Year', 'Month', 'Day', 'Time', 'Data Quality'], axis=1)`
+    - String Operations- Which month was the snowiest
+        - conversion and resampling of regular time-series data using `resample`
+            - `weather_2012['Temp (C)'].resample('M', how=np.median).plot(kind='bar')`
+            - `is_snowing.astype(float).resample('M', how=np.mean).plot(kind = 'bar')`
+    - Cleaning up messy data
+    - reference
+        - https://github.com/jvns/pandas-cookbook (chapter 3-8 here)
 
 ### Lesson 3: Summary Statistics
 
