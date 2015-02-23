@@ -653,7 +653,16 @@
 ### Lesson 3: Summary Statistics
 
 - think stats
-    - statistical thinking for programmers
-        - 
     - reference
         - http://www.greenteapress.com/thinkstats/thinkstats.pdf
+
+- simple statistics with scipy
+    - introduction
+        - scipy is built on top of Numpy and therefore we can use all array manipulation and indexing methods provided by Numpy.
+    - descriptive statistics
+        - generate random numbers from a standard Gaussian: `sp.randn(100)`
+        - min, max, median, var, etc.
+    - probability distributions
+        - 
+    - reference
+        - https://oneau.wordpress.com/2011/02/28/simple-statistics-with-scipy/
