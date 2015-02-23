@@ -8,10 +8,10 @@
 ### Lesson 1: Virtualization and Dockers
 
 - dockerizing applications:
-    - run an application: ```sudo docker run ubuntu /bin/echo 'hello world' ```
-    - run "hello world" application in the background (as a **daemon**): ```sudo docker run -d ubuntu /bin/sh -c "while truel; do echo hello world; sleep 1; done" ```
-    - check the log of daemonized hello world: ```sudo docker logs [ID of the container]```
-    - stop the container: ```docker stop```
+    - run an application: `sudo docker run ubuntu /bin/echo 'hello world' `
+    - run "hello world" application in the background (as a **daemon**): `sudo docker run -d ubuntu /bin/sh -c "while truel; do echo hello world; sleep 1; done" `
+    - check the log of daemonized hello world: `sudo docker logs [ID of the container]`
+    - stop the container: `docker stop`
         
 ### Lesson 2: The Unix Shell
 
@@ -28,7 +28,8 @@
 
 - hard links and symbolic links 
 
-- some reference of Linux system: http://www.tldp.org/LDP/intro-linux/html/index.html
+- reference
+    - http://www.tldp.org/LDP/intro-linux/html/index.html (about Linux system)
         
 ### Lesson 3: Basic Unix Concepts
 
