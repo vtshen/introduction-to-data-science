@@ -172,6 +172,7 @@
 - searching for files
     - `locate`: find files by name
         - e.g. `locate bin/zip`
+        - use `sudo updatedb` to update the database for `locate`
     - `find`: find files the hard way
         - lots of **tests** we can use, such as file type, name, size, permission, user etc
             - e.g. `find ~ -type f -name "*.jpg" -size +1M -perm 0600 -user me | wc -l`
@@ -279,7 +280,7 @@
         - put the script somewhere the shell can find it
     - script file format
         - an example (saved as `hello_world`)
-        ```
+        ```shell
         #!/bin/bash
         # this is a script
         echo 'hello world!'
@@ -541,6 +542,7 @@
             plt.title('title')
             plt.show()
             ```
+            - note that Matlab and pyplot have the concept of **the current figure and the current axes** (important for MATLAB API)
         - matplotlib object-oriented API
             - recommended, more powerful
             - key idea: no objects, no program states should be **global**, much better especially when there are multiple figures
@@ -554,7 +556,6 @@
             ```
     - controlling line properties
     - working with multiple figures and axes
-        - note that Matlab and pyplot have the concept of **the current figure and the current axes**
     - working with text
         - using mathematical expressions in text
         - annotating text
