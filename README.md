@@ -652,9 +652,7 @@
 
 ### Lesson 3: Summary Statistics
 
-- think stats
-    - reference
-        - http://www.greenteapress.com/thinkstats/thinkstats.pdf
+- think stats (http://www.greenteapress.com/thinkstats/thinkstats.pdf)
 
 - simple statistics with scipy
     - introduction
@@ -663,6 +661,16 @@
         - generate random numbers from a standard Gaussian: `sp.randn(100)`
         - min, max, median, var, etc.
     - probability distributions
-        - 
+        - Scipy has functions that deal with at lease 81 common probability distributions.
+        - e.g. `n = stats.norm(loc=3.5, scale=2.0)` (here `loc` is mean, `scale` is standard deviation)
+    - probability density function (PDF) and probability mass function (PMF)
+    - cumulative density function (CDF)
+    - Percent point function (PPF) or inverse cumulative function
+    - Survival function (SF)
+    - Inverse survival function (ISF)
+    - Random variates
+        - we can draw values from a distribution using `rvs`.
+        - e.g. `sp.stats.poisson.rvs(1.0, size = 100) # 100 random values from a Poisson distribution with mu = 1.0`
     - reference
         - https://oneau.wordpress.com/2011/02/28/simple-statistics-with-scipy/
+        
