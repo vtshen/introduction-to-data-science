@@ -676,3 +676,13 @@
     - reference
         - https://oneau.wordpress.com/2011/02/28/simple-statistics-with-scipy/
         
+## Week 7: Introduction to Statistical Analysis
+
+### Lesson 1: Rules of Probability Theory
+
+- think bayes
+    - Bayes theorem
+        - diachronic interpretation: probability information gets updated when new evidence come in. prior probability -> posterior probability (probability changes over time)
+    - computational statistics
+    - estimation
+    
