@@ -697,5 +697,20 @@
 
 ### Lesson 2: Statistical Decision Making
 
-- decision analysis
-    - 
+- hypothesis testing
+    - introduction
+        - when we see some "apparent effects" in a data set, the first question to ask is whether they are real or simply occurred by chance
+        - general structure to test **statistical significance** (similar to proof by contradiction)
+            - null hypothesis
+            - p-value
+            - interpretation
+    - testing a difference in means
+    - choosing a threshold
+        - Type I error (false positive), and Type II error (false negative)
+        - choose a threshold $\alpha$, to determine whether to accept the hypothesis based on whether p-value is less than $\alpha$
+        - obviously the false positive in this case is $\alpha$. By decreasing $\alpha$, we can decrease false positive, but we increase false negative, so there is a **tradeoff between Type I and Type II errors**
+    - defining the effect
+        - two-sided test and one-sided test
+
+- reference
+    - http://www.greenteapress.com/thinkbayes/thinkstats.pdf (Chapter 7-9)
