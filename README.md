@@ -711,6 +711,11 @@
         - obviously the false positive in this case is $\alpha$. By decreasing $\alpha$, we can decrease false positive, but we increase false negative, so there is a **tradeoff between Type I and Type II errors**
     - defining the effect
         - two-sided test and one-sided test
+    - interpreting the result
+        - three ways of interpretation
+            - classical: simply compare p-value and $\alpha$ and get the result
+            - practical: report p-value without apology, readers interprete the data themselves
+            - Bayesian: let $H_0$ and $H_A$ to be the hypothesis that the effect is not real and that the effect is real. the evidence (data set) is E, we want to calculate $P(H_A | E) = \frac{P(E | H_A) P(H_A)}{P(E)}$ based on some prior probability assumption (e.g. we can assume $P(H_A) = P(H_0) = 0.5$)
 
 - reference
     - http://www.greenteapress.com/thinkbayes/thinkstats.pdf (Chapter 7-9)
