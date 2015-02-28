@@ -680,10 +680,22 @@
 
 ### Lesson 1: Rules of Probability Theory
 
-- think bayes
-    - Bayes theorem
-        - diachronic interpretation: probability information gets updated when new evidence come in. prior probability -> posterior probability (probability changes over time)
-    - computational statistics
-    - estimation
-        - the locomotive problem
-            - description: > A railroad numbers its locomotives in order 1..N. One day you see a locomotive with the number 60. Estimate how many locomotives the railroad has.
+- Bayes theorem
+    - diachronic interpretation: probability information gets updated when new evidence come in. prior probability -> posterior probability (probability changes over time)
+
+- computational statistics
+
+- estimation
+    - the locomotive problem
+        - description: "A railroad numbers its locomotives in order 1..N. One day you see a locomotive with the number 60. Estimate how many locomotives the railroad has."
+        - the estimation depends both on prior probability (uniform prior from 1 to 1000, or power law prior) and number of data (in this question, we have only a data point, increasing the number of data would significantly make the estimation more convincing and less dependent on the prior you choose)
+    - credible intervals
+    - informative prior vs. uninformative prior
+
+- reference
+    - http://www.greenteapress.com/thinkbayes/thinkbayes.pdf (Chapter 1-3)
+
+### Lesson 2: Statistical Decision Making
+
+- decision analysis
+    - 
