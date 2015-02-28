@@ -685,4 +685,5 @@
         - diachronic interpretation: probability information gets updated when new evidence come in. prior probability -> posterior probability (probability changes over time)
     - computational statistics
     - estimation
-    
+        - the locomotive problem
+            - description: > A railroad numbers its locomotives in order 1..N. One day you see a locomotive with the number 60. Estimate how many locomotives the railroad has.
