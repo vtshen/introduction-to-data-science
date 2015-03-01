@@ -741,3 +741,68 @@
     - http://www.greenteapress.com/thinkbayes/thinkstats.pdf (Chapter 7-9)
 
 ### Lesson 3: Linear Modeling
+
+- basic linear regression plotting
+```python
+%matplotlib inline
+
+import numpy as np, pandas as pd, seaborn as sns, matplotlib as mpl, matplotlib.pyplot as plt
+import statsmodels
+
+np.random.seed(sum(map(ord, "linear_quantitative")))
+tips = sns.load_dataset("tips")
+
+sns.lmplot("total_bill", "tip", tips, ci = 100); # two parts, one is scatter plot, the other is the regression line
+sns.lmplot("size", "tip", tips, x_jitter = .15); # add some jitter to improve the plot
+sns.lmplot("size", "tip", tips, x_estimator = np.mean) 
+bins = [10, 20, 30, 40]
+sns.lmplot("total_bill", "tip", tips, x_bins=bins)
+```
+
+- Faceted linear model plots
+```python
+sns.lmplot("total_bill", "tip", tips, hue="smoker", ci = 40, markers = ["x", "o"]); # plot in the same graph
+sns.lmplot("total_bill", "tip", tips, hue="smoker", ci = 40, col = "smoker"); # plot in the different graphs
+
+g = sns.lmplot("total_bill", "tip", tips, hue="day", palette="Set2",
+               hue_order=["Thur", "Fri", "Sat", "Sun"]) # here lmplot() returns a grid object for further use
+g.set_axis_labels("Total bill (US Dollars)", "Tip");
+g.set(xticks=[10, 30, 50], ylim=(0, 10), yticks=[0, 2.5, 5, 7.5, 10]);
+```
+
+- plot different linear relationships
+```python
+sns.lmplot("total_bill", "tip", tips, hue="time", palette="Set1", fit_reg=False);
+sns.lmplot("size", "total_bill", tips, order = 2); # nonlinear plot
+```
+
+- Plotting logistic regression
+```python
+tips["big_tip"] = (tips["tip"] / tips["total_bill"]) > .15
+sns.lmplot("total_bill", "big_tip", tips, y_jitter=.05, logistic = True); # logistic regression (see http://en.wikipedia.org/wiki/Logistic_regression)
+```
+
+- Plotting data with outliers
+```python
+sns.lmplot("total_bill", "tip", tips, robust=True, n_boot=500); # with robust option
+```
+
+- Plotting simple regression with `regplot()`
+    - regplot() is lower-level of lmplot() and it would give you more control
+
+- Examining model residuals using `residplot()`
+
+- Plotting marginal distributions using `jointplot()`
+```python
+sns.jointplot("total_bill", "tip", tips, kind="reg", color="seagreen"); # plot regression
+sns.jointplot("total_bill", "tip", tips, kind="resid", color="#774499"); # plot residue, similar to residue plotting
+```
+
+- Describing continuous interactions with `interactplot()`
+
+- Plotting many pairwise relationships with `corrplot()`
+
+- Plotting model coefficients with `coefplot()`
+
+- reference
+    - http://web.stanford.edu/~mwaskom/software/seaborn/tutorial/quantitative_linear_models.html
