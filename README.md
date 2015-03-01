@@ -716,6 +716,28 @@
             - classical: simply compare p-value and $\alpha$ and get the result
             - practical: report p-value without apology, readers interprete the data themselves
             - Bayesian: let $H_0$ and $H_A$ to be the hypothesis that the effect is not real and that the effect is real. the evidence (data set) is E, we want to calculate $P(H_A | E) = \frac{P(E | H_A) P(H_A)}{P(E)}$ based on some prior probability assumption (e.g. we can assume $P(H_A) = P(H_0) = 0.5$)
+    - cross-validation
+        - use one set of data to formulate the hypothesis, and a **different set** of data to test it
+    - chi-square test
+    - efficient resampling
+    - power: The probability that a test will reject the null hypothesis if it is false
+
+- estimation
+    - estimation of some parameters of a specific distribution
+    - confidence intervals
+    - Bayesian estimation
+
+- correlation
+    - standard scores
+    - covariance
+    - correlation
+        - Pearson’s correlation: decide whether two variables have linear dependence
+    - scatter plots in python
+    - Spearman’s rank correlation
+    - least squares fit
+    - goodness of fit ($R^2$)
 
 - reference
     - http://www.greenteapress.com/thinkbayes/thinkstats.pdf (Chapter 7-9)
+
+### Lesson 3: Linear Modeling
