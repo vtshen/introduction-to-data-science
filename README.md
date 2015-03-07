@@ -788,7 +788,7 @@ sns.lmplot("total_bill", "tip", tips, robust=True, n_boot=500); # with robust op
 ```
 
 - Plotting simple regression with `regplot()`
-    - regplot() is lower-level of lmplot() and it would give you more control
+    - regplot() is lower-level of lmplot() and it would give you more control, every time you use lmplot(), you can the lower-level regplot()
 
 - Examining model residuals using `residplot()`
 
@@ -806,3 +806,38 @@ sns.jointplot("total_bill", "tip", tips, kind="resid", color="#774499"); # plot 
 
 - reference
     - http://web.stanford.edu/~mwaskom/software/seaborn/tutorial/quantitative_linear_models.html
+
+## Week 8: Introduction to Time Series Data
+
+### Lesson 1: Introduction to Tim Series Data with Pandas
+
+- basic oprations
+```python
+import pandas as pd, numpy as np
+
+rng = pd.date_range('1/1/2011', periods = 72, freq = "H") # create a range of dates
+ts = pd.Series(np.random.randn(len(rng)), index=rng)
+converted = ts.asfreq('45Min', method = "pad") # change the frequency
+ts.resample('D', how = 'mean') # resample data
+```
+
+- Time Stamps (time points) vs. Time Spans (time periods)
+```python
+from pandas import *
+
+dates = [datetime(2012, 5, 1), datetime(2012, 5, 2), datetime(2012, 5, 3)] # three time points
+periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')]) # three time periods (each one spams one month)
+```
+
+- Converting to Timestamps
+    - `to_datatime` (with `dayfirst` option)
+    - invalid data
+    - epoch timestamps
+        - note the default unit is nanosecond
+
+- Generating Ranges of Timestamps
+    - `date_range` (default is calendar day) and `bdate_range` (default is business day)
+    - e.g. `index = date_range('2000-1-1', periods=1000, freq='M')`
+
+
+- reference: http://pandas.pydata.org/pandas-docs/stable/timeseries.html
