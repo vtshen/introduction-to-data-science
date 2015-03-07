@@ -904,9 +904,17 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
 
 - Plotting statistical timeseries data
     - introduction
-        - `tsplot`: plot statistical timeseries data
-    - Specifying input data with multidimensional arrays
+        - `tsplot`: plot statistical timeseries data (e.g. confidence interval, error bar, etc)
+    - two kinds of input data of tsplot
+        - multidimensional array
+        - long-form DataFrames
+            - spedify options such as `time`, `unit`, `condition`, `value`, `color`, `err_kws`, `ci`, etc
+    - Different approaches to representing estimator variability
         - 
+
     
 - reference
     - http://web.stanford.edu/~mwaskom/software/seaborn/tutorial/timeseries_plots.html
+    - http://nbviewer.ipython.org/github/chrisalbon/code_py/blob/master/seaborn_pandas_timeseries_plot.ipynb
+    - http://nbviewer.ipython.org/github/chrisalbon/code_py/blob/master/seaborn_pretty_timeseries_plots.ipynb
+    - http://stanford.edu/~mwaskom/software/seaborn/generated/seaborn.tsplot.html (tsplot documentation)
