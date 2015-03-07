@@ -902,4 +902,11 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
 
 ### Lesson 2: Introduction to Time Series Data with Seaborn
 
-- 
+- Plotting statistical timeseries data
+    - introduction
+        - `tsplot`: plot statistical timeseries data
+    - Specifying input data with multidimensional arrays
+        - 
+    
+- reference
+    - http://web.stanford.edu/~mwaskom/software/seaborn/tutorial/timeseries_plots.html
