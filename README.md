@@ -910,11 +910,16 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
         - long-form DataFrames
             - spedify options such as `time`, `unit`, `condition`, `value`, `color`, `err_kws`, `ci`, etc
     - Different approaches to representing estimator variability
-        - 
-
+        - Visualizing uncertainty at each observation with error bars
+            - e.g. `ax = sns.tsplot(sines, err_style="ci_bars", interpolate=False)`
+        - Drawing comparisons with overlapping error bands
+        - Representing a distribution with multiple confidence intervals
+        - Visualizing the data for each sampling unit
     
 - reference
     - http://web.stanford.edu/~mwaskom/software/seaborn/tutorial/timeseries_plots.html
     - http://nbviewer.ipython.org/github/chrisalbon/code_py/blob/master/seaborn_pandas_timeseries_plot.ipynb
     - http://nbviewer.ipython.org/github/chrisalbon/code_py/blob/master/seaborn_pretty_timeseries_plots.ipynb
     - http://stanford.edu/~mwaskom/software/seaborn/generated/seaborn.tsplot.html (tsplot documentation)
+
+### Lesson 3: 
