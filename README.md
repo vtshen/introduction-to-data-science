@@ -837,7 +837,34 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
 
 - Generating Ranges of Timestamps
     - `date_range` (default is calendar day) and `bdate_range` (default is business day)
-    - e.g. `index = date_range('2000-1-1', periods=1000, freq='M')`
+    ```python
+    index = date_range('2000-1-1', periods=1000, freq='M')
 
+    start = datetime(2011,1,1)
+    end = datetime(2012,1,1)
+    rng = date_range(start, end, freq = "W")
+    ```
+
+- DatetimeIndex
+    - One of the main uses for DatetimeIndex is as an index for pandas objects. 
+    - DatetimeIndex Partial String Indexing
+        - suppose `ts` is a Series indexed by a TimeSeries, then we can use partial string such as `ts['2011']` or `ts['2011-6']` or `ts['2011-6':'2011-8']` to extract data
+        - see reference for more partial string indexing
+    - Truncating & Fancy Indexing
+    - Time/Date Components
+
+- DateOffset objects
+    - "DateOffset objects" represent frequency increments, such as month, business day, one hours, etc
+    - key features
+        - added to a datetime object to obtain a shifted date
+        - multiplied by an integer so that the increment will be applied multiple times
+        - has `rollforward` and `rollback` methods for moving a date forward or backward to the next or previous "offset date"
+    - Parametric offsets
+    - Custom Business Days
+    - Offset Aliases, Combining Aliases, Anchored Offsets, Legacy Aliases
+    - Holidays / Holiday Calendars
+
+- Time series-related instance methods
+    - 
 
 - reference: http://pandas.pydata.org/pandas-docs/stable/timeseries.html
