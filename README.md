@@ -880,6 +880,20 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
     - upsampling option: `fill_method`, `limit`
 
 - Time Span Representation
-    - 
+    - introduction
+        - TimeSpan is quite similar to TimeStamp mentioned before. We have `Period` instead of `datetime`, `period_range` instead of `date_range`. 
+    - Period
+    - PeriodIndex and period_range
+    - PeriodIndex Partial String Indexing
+    - Frequency Conversion and Resampling with PeriodIndex
+        - in time span, we can set `how` option to `start` or `end` of the period when doing frequency conversion
 
-- reference: http://pandas.pydata.org/pandas-docs/stable/timeseries.html
+- Converting between Representations
+    - `to_period` and `to_timestamp` 
+
+- Representing out-of-bounds spans
+
+- Time Zone Handling
+
+- reference
+    - http://pandas.pydata.org/pandas-docs/stable/timeseries.html
