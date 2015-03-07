@@ -896,4 +896,10 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
 - Time Zone Handling
 
 - reference
-    - http://pandas.pydata.org/pandas-docs/stable/timeseries.html
+    - http://pandas.pydata.org/pandas-docs/stable/timeseries.html (TimeSeries documentation)
+    - http://nbviewer.ipython.org/github/twiecki/financial-analysis-python-tutorial/blob/master/1.%20Pandas%20Basics.ipynb
+    - http://nbviewer.ipython.org/github/chrisalbon/code_py/blob/master/pandas_time_series_basics.ipynb (an introduction to TimeSeries with examples)
+
+### Lesson 2: Introduction to Time Series Data with Seaborn
+
+- 
