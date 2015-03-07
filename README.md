@@ -865,6 +865,21 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
     - Holidays / Holiday Calendars
 
 - Time series-related instance methods
+    - shifting the values in a TimeSeries in time
+        - `shift`: it can accept `freq` argument or `DataOffset` class
+    - Frequency conversion
+        - `asfreq`
+    - Filling forward / backward
+        - `fillna` can fill the NA data associated with `asfreq` or `reindex`
+    - Converting to Python datatimes
+
+- Resampling
+    - e.g. `ts.resample('D', how = 'mean') # resample data`
+    - `how` methods: `sum`, `mean`, `std`, `sem`, `max`, `min`, `median`, `first`, `last`, `ohlc`
+    - downsampling option: `closed` (set to `left` or `right`)
+    - upsampling option: `fill_method`, `limit`
+
+- Time Span Representation
     - 
 
 - reference: http://pandas.pydata.org/pandas-docs/stable/timeseries.html
