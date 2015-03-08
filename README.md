@@ -1008,7 +1008,8 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
         def lexical_diversity(tokens):
             return 1.0*len(set(tokens))/len(tokens) 
         ```
-        
+    - Examining Patterns in Retweets
+    - Visualizing Frequency Data with Histograms
 
 - reference
     - https://rawgit.com/ptwobrussell/Mining-the-Social-Web-2nd-Edition/master/ipynb/html/__Chapter%201%20-%20Mining%20Twitter%20(Full-Text%20Sampler).html
