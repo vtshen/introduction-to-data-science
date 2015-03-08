@@ -988,7 +988,19 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
     ```
 
 - Analyzing the 140 Characters
-    - 
+    - Extracting Tweet Entities
+        - The entities in the text of a tweet are conveniently processed and available through t['entities']
+        ```python
+        q = "illini"
+        count = 3
+        search_results = twitter_api.search.tweets(q = q, count = count) # search_results contains two fields: "statuses" and "search_      metadata" 
+        first_status = search_results['statuses'][0] # get the first status
+        print("keys = ", first_status.keys()) # show the structure of the first tweet
 
+        print("\n\ntext = ", first_status["text"], "\n\nentities = ", first_status['entities'])
+        ```
+    - Analyzing Tweets and Tweet Entities with Frequency Analysis
+    
+    
 - reference
     - https://rawgit.com/ptwobrussell/Mining-the-Social-Web-2nd-Edition/master/ipynb/html/__Chapter%201%20-%20Mining%20Twitter%20(Full-Text%20Sampler).html
