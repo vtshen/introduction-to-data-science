@@ -1000,7 +1000,15 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
         print("\n\ntext = ", first_status["text"], "\n\nentities = ", first_status['entities'])
         ```
     - Analyzing Tweets and Tweet Entities with Frequency Analysis
-    
-    
+        - we use `collections.Counter` to analyze the frequency
+    - Computing the Lexical Diversity of Tweets
+        - definition of lexical diversity: the number of **unique** tokens in the text divided by the total number of tokens in the text, a function is as follows
+        ```python
+        # A function for computing lexical diversity
+        def lexical_diversity(tokens):
+            return 1.0*len(set(tokens))/len(tokens) 
+        ```
+        
+
 - reference
     - https://rawgit.com/ptwobrussell/Mining-the-Social-Web-2nd-Edition/master/ipynb/html/__Chapter%201%20-%20Mining%20Twitter%20(Full-Text%20Sampler).html
