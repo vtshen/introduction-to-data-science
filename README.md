@@ -922,4 +922,73 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
     - http://nbviewer.ipython.org/github/chrisalbon/code_py/blob/master/seaborn_pretty_timeseries_plots.ipynb
     - http://stanford.edu/~mwaskom/software/seaborn/generated/seaborn.tsplot.html (tsplot documentation)
 
-### Lesson 3: 
+### Lesson 3: Introduction to Twitter Data Mining
+
+- Exploring Twitter's API
+    - Fundamental Twitter Terminology
+    - Creating a Twitter API Connection
+    ```python
+    import twitter
+    
+    CONSUMER_KEY = 'LItYWbMkoEt6KRbznvoCQcP5i'
+    CONSUMER_SECRET = 'NVhC9F6W77iO99Ut1aJDX7ut0DP8GqHyVFdtEWpRboFlpcvqnv'
+    OAUTH_TOKEN = '2870997399-kNPx3rODRpF1YwmxQm9AQ4pIArfoHHgU7M8jR8Y'
+    OAUTH_TOKEN_SECRET = 'sh6aEqDKoDJ2biDWtXXH4PCpiR4IBhKvOFLEAEWDRUym1'
+    auth = twitter.oauth.OAuth(OAUTH_TOKEN, OAUTH_TOKEN_SECRET, CONSUMER_KEY, CONSUMER_SECRET)
+    twitter_api = twitter.Twitter(auth=auth)
+    
+    print(twitter_api)
+    ```
+    - Exploring Trending Topics
+        - get trending topics in the world and the US
+        ```python
+        # The Yahoo! Where On Earth ID for the entire world is 1. See https://dev.twitter.com/docs/api/1.1/get/trends/place and     http://developer.yahoo.com/geo/geoplanet/
+        WORLD_WOE_ID = 1
+        US_WOE_ID = 23424977
+        # Prefix ID with the underscore for query string parameterization.
+        # Without the underscore, the twitter package appends the ID value
+        # to the URL itself as a special case keyword argument.
+        world_trends = twitter_api.trends.place(_id=WORLD_WOE_ID)
+        us_trends = twitter_api.trends.place(_id=US_WOE_ID)
+    
+        import json # use json package to pretty print it
+        print(json.dumps(world_trends, indent=4), "\n",json. dumps(us_trends, indent=4))
+        ```
+        - get common trends
+        ```python
+        # find the intersection of two sets (world trend and US trend)
+        world_trends_set = set([trend['name' ] for trend in world_trends[0]['trends' ]])
+        us_trends_set = set([trend['name' ] for trend in us_trends[0]['trends' ]])
+        common_trends = world_trends_set.intersection(us_trends_set)
+        print(common_trends)
+        ```
+    - Searching for Tweets
+    ```python
+    import twitter
+
+    q = '#illini' # how to use query operators to build a query? see https://dev.twitter.com/rest/public/search 
+    count = 10 # count is The number of tweets to return per page
+    # See https://dev.twitter.com/docs/api/1.1/get/search/tweets
+    search_results = twitter_api.search.tweets(q = q, count = count) # search_results contains two fields: "statuses" and "search_metadata" 
+    statuses = search_results['statuses' ]
+    # Iterate through 5 more batches of results by following the cursor
+    for _ in range(5):
+        print("Length of statuses" , len(statuses))
+        try:
+            next_results = search_results['search_metadata']['next_results'] # get information related to next page
+        except KeyError: # No more results when next_results doesn't exist
+            break
+        # Create a dictionary from next_results, which has the following form:
+        # ?max_id=313519052523986943&q=NCAA&include_entities=1
+        kwargs = dict([ kv.split('=' ) for kv in next_results[1:].split("&" ) ]) # get the arguments to search the next page
+        search_results = twitter_api.search.tweets(**kwargs) # here double stars unpack the values in dict into arguments of the function
+        statuses += search_results['statuses' ]
+        
+    print(json.dumps(statuses[0], indent=4))
+    ```
+
+- Analyzing the 140 Characters
+    - 
+
+- reference
+    - https://rawgit.com/ptwobrussell/Mining-the-Social-Web-2nd-Edition/master/ipynb/html/__Chapter%201%20-%20Mining%20Twitter%20(Full-Text%20Sampler).html
