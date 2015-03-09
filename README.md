@@ -1011,5 +1011,19 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
     - Examining Patterns in Retweets
     - Visualizing Frequency Data with Histograms
 
+- introduction to JSON
+    - JSON is a lightweight, human-readable text-based open standard data-interchange format
+    - JSON vs XML
+    - Typical uses of JSON
+        - API
+        - NoSQL 
+        - AJAX
+        - Package Management
+    - JSON in Python
+        - `json.loads(json_obj)`, `json.dumps(json_obj, indent = 4)`
+
 - reference
     - https://rawgit.com/ptwobrussell/Mining-the-Social-Web-2nd-Edition/master/ipynb/html/__Chapter%201%20-%20Mining%20Twitter%20(Full-Text%20Sampler).html
+    - http://www.w3resource.com/JSON/introduction.php (an introduction of JSON)
+    - https://freepythontips.wordpress.com/2013/08/08/storing-and-loading-data-with-json/ (discuss how to load and store data with json in python)
+
