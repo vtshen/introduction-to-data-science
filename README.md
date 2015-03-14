@@ -1159,7 +1159,7 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
     - Navigating the tree
         - going down
             - Navigating using tag names
-            - `.contents` and `.children` 
+            - `.contents` and `.children`
             - `.descendants`: iterate over **all** tag's children
             - `.string`
             - `.strings` and `stripped_strings`
@@ -1167,8 +1167,39 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
             - `.parent` vs `.parents`
         - going sideways
             - `.next_sibling` and `.previous_sibling`
-            
+            - `.next_siblings` and `.previous_siblings`
+        - going back and forth
+    - searching the tree
+        - Kinds of filters
+            - the filters could be a string, a regular expression, a list, `True`, or a function
+        - `find_all()`
+            - shortcut: calling a tag is like calling find_all()
+            ```python
+            soup("a") # equivalent to soup.find_all("a")
+            soup(text = True) # equivalent to soup.find_all(text = True)
+            ```
+            - the `name` argument
+            - the keyword arguments
+            - searching by CSS class
+            - the `text` argument: search for strings instead of tags
+            - the `recursive` argument: set to `False` to consider only the direct children
+            - the `limit` argument: set the max number of results
+        - other search functions: `find()`, `find_parents()`, `find_parent()`, etc
+        - CSS selectors
+            - `.select()`
+            - reference
+                - http://www.w3schools.com/cssref/css_selectors.asp
+    - modifying the tree
+    - output
+        - pretty-printing and non-pretty printing
+        - output formatters
+    - specifying the parser to use
+    - encodings
+        - BeautifulSoup converts encoding to unicode automatically
+    - parsing only part of a document
 
 - reference
     - http://nbviewer.ipython.org/github/INFO490/spring2015/blob/master/week09/intro2dp.ipynb
     - http://www.crummy.com/software/BeautifulSoup/bs4/doc/ (BeautifulSoup documentation)
+
+### Lesson 3: Working with Data
