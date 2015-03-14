@@ -631,6 +631,7 @@
         - http://www.gregreda.com/2013/10/26/intro-to-pandas-data-structures/ (detailed discussion of data structures)
         - http://pandas.pydata.org/pandas-docs/stable/10min.html (a good introduction to various features in pandas in 10 mins)
         - https://github.com/jvns/pandas-cookbook (chapter 1 & 2 here)
+        - http://nbviewer.ipython.org/github/INFO490/spring2015/blob/master/week09/intro2pandas.ipynb (another introduction to pandas)
         
 ### Lesson 2: Data Manipulation and Analysis
 
@@ -1122,7 +1123,12 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
 
 ### Lesson 2: Data Parsing
 
-- BeautifulSoup introduction
+- introduction to data parsing
+    - two techniques used to parse a structured file (like XML)
+        - Simple API for XML (SAX): event driven parser that reads and processes **each part** of XML file sequentially
+        - Document Object Model (DOM): reads and parses the **entire** document
+
+- introduction to BeautifulSoup
     - quick start
     ```python
     html_doc = """
@@ -1199,7 +1205,9 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
     - parsing only part of a document
 
 - reference
-    - http://nbviewer.ipython.org/github/INFO490/spring2015/blob/master/week09/intro2dp.ipynb
+    - http://nbviewer.ipython.org/github/INFO490/spring2015/blob/master/week09/intro2dp.ipynb (general introduction to data parsing)
     - http://www.crummy.com/software/BeautifulSoup/bs4/doc/ (BeautifulSoup documentation)
 
 ### Lesson 3: Working with Data
+
+- 
