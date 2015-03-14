@@ -1028,3 +1028,11 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
     - https://freepythontips.wordpress.com/2013/08/08/storing-and-loading-data-with-json/ (discuss how to load and store data with json in python)
     - https://rawgit.com/ptwobrussell/Mining-the-Social-Web-2nd-Edition/master/ipynb/html/Chapter%209%20-%20Twitter%20Cookbook.html (cookbook of mining twitter)
     
+## Week 9: Introduction to Data Processing
+
+### Lesson 1: Data Formats
+
+- 
+
+- reference
+    - http://nbviewer.ipython.org/github/INFO490/spring2015/blob/master/week09/dataformats.ipynb
