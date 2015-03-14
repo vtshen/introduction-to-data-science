@@ -1122,4 +1122,53 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
 
 ### Lesson 2: Data Parsing
 
-- 
+- BeautifulSoup introduction
+    - quick start
+    ```python
+    html_doc = """
+    <html><head><title>The Dormouse's story</title></head>
+    <body>
+    <p class="title"><b>The Dormouse's story</b></p>
+    
+    <p class="story">Once upon a time there were three little sisters; and their names were
+    <a href="http://example.com/elsie" class="sister" id="link1">Elsie</a>,
+    <a href="http://example.com/lacie" class="sister" id="link2">Lacie</a> and
+    <a href="http://example.com/tillie" class="sister" id="link3">Tillie</a>;
+    and they lived at the bottom of a well.</p>
+    
+    <p class="story">...</p>
+    """
+    
+    from bs4 import BeautifulSoup
+    soup = BeautifulSoup(html_doc) # making the soup from string
+    
+    print(soup.findAll("p")) # get all paragraphs
+    print(soup.find("p")) # find the first paragraphs
+    
+    for link in soup.findAll("a"):
+        print(link.get("href")) # get all urls
+    ```
+    - making the soup
+    - kinds of objects
+        - tag
+        - name (each tag has a name)
+        - attributes
+        - multi-valued attributes
+        - navigableString
+    - comments and other special strings
+    - Navigating the tree
+        - going down
+            - Navigating using tag names
+            - `.contents` and `.children` 
+            - `.descendants`: iterate over **all** tag's children
+            - `.string`
+            - `.strings` and `stripped_strings`
+        - going up
+            - `.parent` vs `.parents`
+        - going sideways
+            - `.next_sibling` and `.previous_sibling`
+            
+
+- reference
+    - http://nbviewer.ipython.org/github/INFO490/spring2015/blob/master/week09/intro2dp.ipynb
+    - http://www.crummy.com/software/BeautifulSoup/bs4/doc/ (BeautifulSoup documentation)
