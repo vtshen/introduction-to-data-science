@@ -1090,9 +1090,36 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
     with open('data.xml', 'w') as fout:
         tree.write(fout, encoding='unicode')
     ```
-    - 
+    - parsing a XML file
+    ```python
+    data = [["iata", "airport", "city", "state", "country", "lat", "long"]]
+
+    tree = ET.parse('data.xml') # parsing result return a ElementTree object, more info here: https://docs.python.org/3.4/library/xml.etree.elementtree.html
+    root = tree.getroot() 
+    
+    for airport in root.findall('airport'):
+        row = []
+        row.append(airport[0].text)
+        row.append(airport.attrib['name']) # extract attribute "name"
+        row.append(airport[1].text)
+        row.append(airport[2].text)
+        row.append(airport[3].text)
+        row.append(airport[4].text)
+        row.append(airport[5].text)
+    
+        data.append(row)
+        
+    print(data[:5])
+    ```
+
+- HDF (Hierarchical Data Format)
+    - HDF is a data format that is designed to efficiently handle large data sets that might be difficult to persist by using either database systems, XML documents, or other custom-defined user formats.
 
 - reference
     - http://nbviewer.ipython.org/github/INFO490/spring2015/blob/master/week09/dataformats.ipynb
     - https://en.wikipedia.org/wiki/XML
-    - 
+    - http://www.hdfgroup.org/
+
+### Lesson 2: Data Parsing
+
+- 
