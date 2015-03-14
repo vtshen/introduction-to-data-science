@@ -1020,11 +1020,12 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
         - AJAX
         - Package Management
     - JSON in Python
-        - `json.loads(json_obj)`, `json.dumps(json_obj, indent = 4)`
+        - `json.loads(json_obj)`, `json.dumps(json_obj, indent = 4)`, `json.load()`, `json.dump()`
 
 - reference
     - https://rawgit.com/ptwobrussell/Mining-the-Social-Web-2nd-Edition/master/ipynb/html/__Chapter%201%20-%20Mining%20Twitter%20(Full-Text%20Sampler).html
     - http://www.w3resource.com/JSON/introduction.php (an introduction of JSON)
+    - http://json.org/
     - https://freepythontips.wordpress.com/2013/08/08/storing-and-loading-data-with-json/ (discuss how to load and store data with json in python)
     - https://rawgit.com/ptwobrussell/Mining-the-Social-Web-2nd-Edition/master/ipynb/html/Chapter%209%20-%20Twitter%20Cookbook.html (cookbook of mining twitter)
     
@@ -1032,7 +1033,66 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
 
 ### Lesson 1: Data Formats
 
-- 
+- introduction
+
+- formatted text
+    - fixed-width format
+    ```python
+    # First we define our format specification codes
+    hfmt = "{0:5s}{1:29s}{2:27s}{3:6s}{4:10s}{5:12s}{6:10s}\n" 
+    fmt = "{0:5s}{1:29s}{2:30s}{3:3s}{4:4s}{5:14.8f}{6:14.8f}\n" # {0:5s} means the 0th element is 5-character string, etc
+    
+    # We need to treat the first row special since it is the header row
+    flag = True
+    
+    # Now open file and write out airports.
+    with open('fixed-width.txt', 'w') as fout:
+        for row in airports:
+            # We output first line special since it is a header row.
+            if flag:
+                fout.write(hfmt.format(row[0], row[1], row[2], row[3], row[4], row[5], row[6]))
+                flag = False
+            else:
+                fout.write(fmt.format(row[0], row[1], row[2], row[3], row[4], float(row[5]), float(row[6])))
+    ```
+        - a trick to quantify the width of each column: print "1234567890" multiple times
+    - Delimiter Separated Values
+        - using `csv` module with `delimiter` option to read and write data
+        ```python
+        fout = csv.writer(csvfile, delimiter='|')
+        ```
+
+- JSON (see week 8)
+
+- XML
+    - introduction
+        - XML is a simple, self-describing structured text-based data format. XML is based on the **concept of element**, that can have attributes and values. Elements can be nested, which can indicate parent-child relationships or a form of containerization
+    - some examples: HTML5, SVG (Scalable Vector Graphics)
+    - creating a XML file
+    ```python
+    import html 
+    import xml.etree.ElementTree as ET
+    
+    data = '<?xml version="1.0"?>\n' + '<airports>\n'
+    for airport in airports[1:]:
+        data += '    <airport name="{0}">\n'.format(html.escape(airport[1]))
+        data += '        <iata>' + str(airport[0]) + '</iata>\n'
+        data += '        <city>' + str(airport[2]) + '</city>\n'
+        data += '        <state>' + str(airport[3]) + '</state>\n'
+        data += '        <country>' + str(airport[4]) + '</country>\n'
+        data += '        <latitude>' + str(airport[5]) + '</latitude>\n'
+        data += '        <longitude>' + str(airport[6]) + '</longitude>\n'
+        data += '    </airport>\n'
+    
+    data += '</airports>\n'
+    tree = ET.ElementTree(ET.fromstring(data))
+    
+    with open('data.xml', 'w') as fout:
+        tree.write(fout, encoding='unicode')
+    ```
+    - 
 
 - reference
     - http://nbviewer.ipython.org/github/INFO490/spring2015/blob/master/week09/dataformats.ipynb
+    - https://en.wikipedia.org/wiki/XML
+    - 
