@@ -1222,4 +1222,5 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
         - http://nbviewer.ipython.org/github/INFO490/spring2015/blob/master/week09/dataviz.ipynb
 
 - requests package
-    - 
+    - reference
+        - http://docs.python-requests.org/en/latest/
