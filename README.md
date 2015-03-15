@@ -1207,7 +1207,19 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
 - reference
     - http://nbviewer.ipython.org/github/INFO490/spring2015/blob/master/week09/intro2dp.ipynb (general introduction to data parsing)
     - http://www.crummy.com/software/BeautifulSoup/bs4/doc/ (BeautifulSoup documentation)
+    - http://nbviewer.ipython.org/urls/dl.dropboxusercontent.com/u/33663928/dst4l-projects/week5/Web_Scraping_Tutorial-TotalFilm_50_Adaptations.ipynb (web scraping using python requests and lxml)
 
 ### Lesson 3: Working with Data
 
-- 
+- visualizing the unemployment rate of all counties in the US
+    - key points in this example
+        - SVG file is a kind of XML file
+        - each county info is store in a <path> item, there are 3143 items in total
+        - in each item, the attribute "id" represents "FIPS code" of the county
+        - match the unemployment rate data to the graph by FIPS code
+        - use proper color scale to visualize the data
+    - reference
+        - http://nbviewer.ipython.org/github/INFO490/spring2015/blob/master/week09/dataviz.ipynb
+
+- requests package
+    - 
