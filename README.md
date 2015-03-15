@@ -1220,6 +1220,7 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
         - use proper color scale to visualize the data
     - reference
         - http://nbviewer.ipython.org/github/INFO490/spring2015/blob/master/week09/dataviz.ipynb
+        - http://colorbrewer2.org/ (color scale reference)
 
 - requests package
     - reference
