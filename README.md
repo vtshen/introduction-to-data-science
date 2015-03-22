@@ -1,8 +1,6 @@
 <center>Introduction to Data Science </center>
 ===========
 
-[TOC]
-
 ## Week 1: Introduction to Unix
 
 ### Lesson 1: Virtualization and Dockers
@@ -1225,3 +1223,26 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
 - requests package
     - reference
         - http://docs.python-requests.org/en/latest/
+
+## Week 10: Introduction to Data Persistence
+
+### Lesson 1: Rational Databases
+
+- introduction to data persistence
+    - data persistence using basic file input/output in Python
+        - method: directly write and read data in **string form** into/out of a file
+        - not optimal, for following reasons    
+            - not convenient to convert some types of data into strings
+            - costly in terms of storage space
+            - rely completely on the underlying file system **consistency** and **durability**
+    - pickling
+        - 
+
+
+
+
+
+
+
+
+        
