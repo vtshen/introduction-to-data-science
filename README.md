@@ -1287,7 +1287,43 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
         - Related tables are often grouped together into a schema
     - SQL
         - brief history
-            - 
+            - initially many kinds of database systems have different APIs. SQL is developed as a standard language to access and manipulate them
+        - SQL data types
+            - While the SQL standard defines basic data types, different database systems can support the standard to varying degrees. SQLite supports: NULL, INTEGER, REAL, TEXT, BLOB
+        - create table
+            - syntax: `CREATE TABLE tableName ( { <columnDefinition> | <tableLevelConstraint> } [, { <columnDefinition> | <tableLevelConstraint> } ]* ); `
+            - explanation
+                - "|" means "either/or"
+                - content between "[" and "]" is optional
+                - "*" indicates that multiple enclosing items can be included
+        - drop table
+            - `DROP TABLE tableName ;`
+            - an example of creating and droping tables
+            ```SQL
+            %%writefile create.sql
 
+            -- First we drop any tables if they exist
+            -- Ignore the no such Table error if present
+            
+            DROP TABLE myVendors ;
+            DROP TABLE myProducts ;
+            
+            -- Vendor Table: Could contain full vendor contact information.
+                
+            CREATE TABLE myVendors (
+                itemNumber INT NOT NULL,
+                vendornumber INT NOT NULL,
+                vendorName TEXT
+            ) ;
+            
+            -- Product Table: Could include additional data like quantity
+                
+            CREATE TABLE myProducts (
+                itemNumber INT NOT NULL,
+                price REAL,
+                stockDate TEXT,
+                description TEXT
+            ) ;
+            ```
     - reference
         - http://nbviewer.ipython.org/github/INFO490/spring2015/blob/master/week10/intro2sqlddl.ipynb
