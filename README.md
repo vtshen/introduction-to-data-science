@@ -1236,13 +1236,58 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
             - costly in terms of storage space
             - rely completely on the underlying file system **consistency** and **durability**
     - pickling
-        - 
-
-
-
-
-
-
-
-
+        - using `pickle` package and **binary** reading/writing mode
+        ```python
+        import numpy as np
+        import pickle
         
+        # writing
+        data = np.random.rand(100)
+        
+        with open('test.p', 'wb') as fout:
+            pickle.dump(data, fout)
+
+        # reading
+        with open('test.p', 'rb') as fin:
+            newData = pickle.load(fin)
+
+        print(newData[0:20:4])
+        ```
+        - While easier than custom read/write routines, pickling still requires the file system to provide support for concurrency, consistency, and durability. To go any further with data persistence, we need to move beyond Python language constructs and employ additional software tools.
+    - database systems
+        - classification
+            - Relational Database Management Systems
+                - rely on a tabular data model
+                - e.g. MySQL, PostgreSQL, etc
+            - NoSQL systems
+                - not rely on the tabular data model
+                - many are developed to meet the big data challenges by Google, Facebook etc
+                - e.g. Dynamo, ZopeDB, MongoDB, etc
+        - database roles
+            - database administrator, database developer, database application developer
+        - The ACID Test
+            - test the **atomicity, consistency, isolation, durability** of a database system
+            - reference
+                - http://en.wikipedia.org/wiki/ACID (ACID test)
+        - SQLite
+            - SQLite is a software library that implements a **self-contained, serverless, zero-configuration, transactional** SQL database engine. SQLite is the most widely deployed SQL database engine in the world.
+            - reference
+                - https://www.sqlite.org/ (general introduction)
+                - https://www.sqlite.org/famous.html (some famous users of SQLite)
+
+- reference
+    - http://nbviewer.ipython.org/github/INFO490/spring2015/blob/master/week10/intro2db.ipynb
+    
+### Lesson 2: Using SQL for Schema Manipulation
+
+- introduction to SQL
+    - the basics of relational database systems
+        - relational database hold data of different types
+        - style convention: all SQL commands are presented entirely in uppercase, and item names use camelCase.
+        - Related tables are often grouped together into a schema
+    - SQL
+        - brief history
+            - 
+
+    - reference
+        - http://nbviewer.ipython.org/github/INFO490/spring2015/blob/master/week10/intro2sqlddl.ipynb
