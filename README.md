@@ -1333,7 +1333,23 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
 
 - SQL tutorials on w3schools.com
     - basic statements
-        - `SELECT`, `DISTINCT`, `WHERE`, `AND/OR`, `ORDER BY`, `INSERT INTO`, `UPDATE`, `DELETE`, `SELECT TOP`, `LIKE` (together with SQL wildcard characters), `IN`, `BETWEEN`, `SELECT ... AS` (aliases), `INNER JOIN`, `LEFT/RIGHT JOIN`, `FULL OUTER JOIN`, `SELECT INTO` (create a new table), `INSERT INTO ... SELECT` (insert into an existing table), `CREATE DATABASE`, `CREATE TABLE` (specifying column_names and data_types), ``
+        - `SELECT`
+        - `DISTINCT`
+        - `WHERE`
+        - `AND/OR`
+        - `ORDER BY`
+        - `INSERT INTO`
+        - `UPDATE`
+        - `DELETE`
+        - `SELECT TOP` 
+        - `LIKE` (together with SQL wildcard characters)
+        - `IN`, `BETWEEN`
+        - `SELECT ... AS` (aliases)
+        - `INNER JOIN`, `LEFT/RIGHT JOIN`, `FULL OUTER JOIN`
+        - `SELECT INTO` (create a new table), `INSERT INTO ... SELECT` (insert into an existing table)
+        - `CREATE DATABASE`
+        - `CREATE TABLE` (specifying column_names, data_types and optional_constaints)
+            - some constaints: `NOT NULL`, `UNIQUE`, `PRIMARY KEY`, `FOREIGN KEY`, 
     - SQL injection
         - a technique where malicious users can **inject SQL commands into an SQL statement**, via web page input.
     - reference
