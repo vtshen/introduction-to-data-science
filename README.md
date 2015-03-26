@@ -1331,7 +1331,7 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
     - reference
         - http://nbviewer.ipython.org/github/INFO490/spring2015/blob/master/week10/intro2sqlddl.ipynb
 
-- SQL tutorials on w3schools.com
+- SQL tutorials
     - basic statements
         - `SELECT`
         - `DISTINCT`
@@ -1354,6 +1354,7 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
         - `DROP INDEX/TABLE/DATABASE`
         - `ALTER TABLE`
         - `CREATE VIEW`
+        - `GROUP BY`
         - Date functions
         - Null functions
     - general data types & data types for various databases
@@ -1366,4 +1367,18 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
             - `UCASE()`, `LCASE()`, `MID()`, `LEN()`, `ROUND()`, `NOW()`, `FORMAT()`
     - reference
         - http://www.w3schools.com/sql/default.asp
+        - - http://www.tutorialspoint.com/sql/ 
 
+- SQLite tutorials
+    - similar to SQL standard, only a little difference
+    - reference
+        - http://www.tutorialspoint.com/sqlite/ 
+
+### Lesson 3: Using SQL for Data Manipulation
+
+- introduction to SQL data manipulation language
+    - 
+
+- reference
+    - http://nbviewer.ipython.org/github/INFO490/spring2015/blob/master/week10/intro2sqldml.ipynb
+    - http://www.tutorialspoint.com/sql/ 
