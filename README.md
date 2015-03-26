@@ -1349,8 +1349,21 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
         - `SELECT INTO` (create a new table), `INSERT INTO ... SELECT` (insert into an existing table)
         - `CREATE DATABASE`
         - `CREATE TABLE` (specifying column_names, data_types and optional_constaints)
-            - some constaints: `NOT NULL`, `UNIQUE`, `PRIMARY KEY`, `FOREIGN KEY`, 
-    - SQL injection
+            - some constaints: `NOT NULL`, `UNIQUE`, `PRIMARY KEY`, `FOREIGN KEY`, `CHECK`, `DEFAULT`, `AUTO INCREMENT`
+        - `CREATE INDEX`
+        - `DROP INDEX/TABLE/DATABASE`
+        - `ALTER TABLE`
+        - `CREATE VIEW`
+        - Date functions
+        - Null functions
+    - general data types & data types for various databases
+    - SQL injection 
         - a technique where malicious users can **inject SQL commands into an SQL statement**, via web page input.
+    - SQL functions
+        - aggregate functions
+            - `AVG()`, `COUNT()`, `FIRST()`, `LAST()`, `MAX()`, `MIN()`, `SUM()`
+        - scalar functions
+            - `UCASE()`, `LCASE()`, `MID()`, `LEN()`, `ROUND()`, `NOW()`, `FORMAT()`
     - reference
         - http://www.w3schools.com/sql/default.asp
+
