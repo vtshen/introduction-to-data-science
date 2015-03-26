@@ -1339,7 +1339,7 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
         - `AND/OR`
         - `ORDER BY`
         - `INSERT INTO`
-        - `UPDATE`
+        - `UPDATE...SET`
         - `DELETE`
         - `SELECT TOP` 
         - `LIKE` (together with SQL wildcard characters)
@@ -1377,8 +1377,4 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
 ### Lesson 3: Using SQL for Data Manipulation
 
 - introduction to SQL data manipulation language
-    - 
-
-- reference
-    - http://nbviewer.ipython.org/github/INFO490/spring2015/blob/master/week10/intro2sqldml.ipynb
-    - http://www.tutorialspoint.com/sql/ 
+    - most are covered in references in Lesson 2, an additional reference: http://nbviewer.ipython.org/github/INFO490/spring2015/blob/master/week10/intro2sqldml.ipynb
