@@ -1285,45 +1285,56 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
         - relational database hold data of different types
         - style convention: all SQL commands are presented entirely in uppercase, and item names use camelCase.
         - Related tables are often grouped together into a schema
-    - SQL
-        - brief history
-            - initially many kinds of database systems have different APIs. SQL is developed as a standard language to access and manipulate them
-        - SQL data types
-            - While the SQL standard defines basic data types, different database systems can support the standard to varying degrees. SQLite supports: NULL, INTEGER, REAL, TEXT, BLOB
-        - create table
-            - syntax: `CREATE TABLE tableName ( { <columnDefinition> | <tableLevelConstraint> } [, { <columnDefinition> | <tableLevelConstraint> } ]* ); `
-            - explanation
-                - "|" means "either/or"
-                - content between "[" and "]" is optional
-                - "*" indicates that multiple enclosing items can be included
-        - drop table
-            - `DROP TABLE tableName ;`
-            - an example of creating and droping tables
-            ```SQL
-            %%writefile create.sql
-
-            -- First we drop any tables if they exist
-            -- Ignore the no such Table error if present
+    - brief history of SQL
+        - initially many kinds of database systems have different APIs. SQL is developed as a standard language to access and manipulate them (but there are some different versions of SQL)
+    - two main components in SQL
+        - Data Definition Language (DDL): used to create, modify, or delete items (such as tables) in a database
+        - Data Manipulation Language (DML): used to add, modify, delete, or select data from a table in the database
+    - SQL data types
+        - While the SQL standard defines basic data types, different database systems can support the standard to varying degrees. SQLite supports: NULL, INTEGER, REAL, TEXT, BLOB
+    - create table
+        - syntax: `CREATE TABLE tableName ( { <columnDefinition> | <tableLevelConstraint> } [, { <columnDefinition> | <tableLevelConstraint> } ]* ); `
+        - explanation
+            - "|" means "either/or"
+            - content between "[" and "]" is optional
+            - "*" indicates that multiple enclosing items can be included
+    - drop table
+        - `DROP TABLE tableName ;`
+        - an example of creating and droping tables
+        ```SQL
+        %%writefile create.sql
+        -- First we drop any tables if they exist
+        -- Ignore the no such Table error if present
+          
+        DROP TABLE myVendors ;
+        DROP TABLE myProducts ;
             
-            DROP TABLE myVendors ;
-            DROP TABLE myProducts ;
-            
-            -- Vendor Table: Could contain full vendor contact information.
+        -- Vendor Table: Could contain full vendor contact information.
                 
-            CREATE TABLE myVendors (
-                itemNumber INT NOT NULL,
-                vendornumber INT NOT NULL,
-                vendorName TEXT
-            ) ;
-            
-            -- Product Table: Could include additional data like quantity
-                
-            CREATE TABLE myProducts (
-                itemNumber INT NOT NULL,
-                price REAL,
-                stockDate TEXT,
-                description TEXT
-            ) ;
-            ```
+        CREATE TABLE myVendors (
+            itemNumber INT NOT NULL,
+            vendornumber INT NOT NULL,
+            vendorName TEXT
+        ) ;
+           
+        -- Product Table: Could include additional data like quantity
+               
+        CREATE TABLE myProducts (
+            itemNumber INT NOT NULL,
+            price REAL,
+            stockDate TEXT,
+            description TEXT
+        ) ;
+        ```
+    - SQL script
+        - we can write SQL commands into a script file for execution. this technique is useful for debugging and command reuse.
     - reference
         - http://nbviewer.ipython.org/github/INFO490/spring2015/blob/master/week10/intro2sqlddl.ipynb
+
+- SQL tutorials on w3schools.com
+    - basic statements
+        - `SELECT`, `DISTINCT`, `WHERE`, `AND/OR`, `ORDER BY`, `INSERT INTO`, `UPDATE`, `DELETE`, `SELECT TOP`, `LIKE` (together with SQL wildcard characters), `IN`, `BETWEEN`, `SELECT ... AS` (aliases), `INNER JOIN`, `LEFT/RIGHT JOIN`, `FULL OUTER JOIN`, `SELECT INTO` (create a new table), `INSERT INTO ... SELECT` (insert into an existing table), `CREATE DATABASE`, `CREATE TABLE` (specifying column_names and data_types), ``
+    - SQL injection
+        - a technique where malicious users can **inject SQL commands into an SQL statement**, via web page input.
+    - reference
+        - http://www.w3schools.com/sql/default.asp
