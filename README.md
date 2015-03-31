@@ -1367,7 +1367,7 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
             - `UCASE()`, `LCASE()`, `MID()`, `LEN()`, `ROUND()`, `NOW()`, `FORMAT()`
     - reference
         - http://www.w3schools.com/sql/default.asp
-        - - http://www.tutorialspoint.com/sql/ 
+        - http://www.tutorialspoint.com/sql/ 
 
 - SQLite tutorials
     - similar to SQL standard, only a little difference
