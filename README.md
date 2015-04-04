@@ -1451,3 +1451,14 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
 ### Lesson 2: Advanced Python Database Programming
 
 - 
+
+- comparison between pandas and SQL
+    - `SELECT`: indexing in pandas
+    - `WHERE`: boolean indexing and NULL check
+    - `GROUP BY`: `groupby()` function
+    - `JOIN`: `join()` or `merge()`
+    - `UNION`: `concat()`
+
+- reference
+    - http://nbviewer.ipython.org/github/INFO490/spring2015/blob/master/week11/intro2pandasdb.ipynb
+    - http://pandas.pydata.org/pandas-docs/stable/comparison_with_sql.html (discussing the comparison between pandas and SQL)
