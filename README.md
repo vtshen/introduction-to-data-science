@@ -1450,7 +1450,25 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
 
 ### Lesson 2: Advanced Python Database Programming
 
-- 
+- Introduction to Pandas & Databases
+    - `read_sql()`: Read SQL query or database table into a DataFrame, it is a convenient **wrapper** around `read_sql_table()` and `read_sql_query()` depending on the provided input
+    ```python
+    import sqlite3 as sl, pandas as pd
+
+    query = "SELECT code, airport, city, state, latitude, longitude FROM airports LIMIT 100 ;"
+
+    with sl.connect(database) as con:
+        data = pd.read_sql(query, con, index_col ='code')
+        print(data[data.state == 'MS'])
+    ```
+    - `to_sql()`: Write records stored in a DataFrame to a SQL database.
+    ```python
+    query = "SELECT code, airport, city, state, latitude, longitude FROM airports ;"
+    with sl.connect(database) as con:
+        data = pd.read_sql(query, con)
+
+        data[data.state == 'IL'].to_sql('ILAirports', con)
+    ```
 
 - comparison between pandas and SQL
     - `SELECT`: indexing in pandas
@@ -1462,3 +1480,22 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
 - reference
     - http://nbviewer.ipython.org/github/INFO490/spring2015/blob/master/week11/intro2pandasdb.ipynb
     - http://pandas.pydata.org/pandas-docs/stable/comparison_with_sql.html (discussing the comparison between pandas and SQL)
+
+### Lesson 3: NoSQL Data Storage
+
+- NoSQL
+    - introduction
+        - provides a mechanism other than the tabular relations used in relational databases
+        - make some operations faster than relational databases
+    - examples
+        - document store
+            - documents encapsulate and encode data in some standard formats such as XML, JSON, etc
+        - graph
+            - designed for data whose relations are well represented as a graph, like social relations, transport links, etc
+        - key-value stores
+            - data is represented as a collection of key-value pairs
+        - others
+    - reference 
+        - https://en.wikipedia.org/wiki/NoSQL
+
+- 
