@@ -1390,10 +1390,59 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
     - to work with a database within a Python program, we follow three steps
         - establish a **connection** to a databse. in most cases, we need to connect to a remote database server through a network connection, for SQLite, we can work locally
         - obtain a **cursor** from the database connection
-        - execute SQL commands by using the database cursor 
+        - execute SQL commands by using the database cursor
     - example
-
+    ```python
+    # We define our Create Table SQL command
+    createSQL = '''
+    CREATE TABLE myProducts (
+        itemNumber INT NOT NULL,
+        price REAL,
+        stockDate TEXT,
+        description TEXT);
+    '''
+    
+    # Tuple containing data values to insert into our database
+    items = ((1,19.95,'2015-03-31','Hooded sweatshirt'), 
+             (2,99.99,'2015-03-29','Beach umbrella'),
+             (3,0.99,'2015-02-28', None),
+             (4,29.95,'2015-02-10','Male bathing suit, blue'),
+             (5,49.95,'2015-02-20','Female bathing suit, one piece, aqua'),
+             (6,9.95,'2015-01-15','Child sand toy set'),
+             (7,24.95,'2014-12-20','White beach towel'),
+             (8,32.95,'2014-12-22','Blue-striped beach towel'),
+             (9,12.95,'2015-03-12','Flip-flop'),
+             (10,34.95,'2015-01-24','Open-toed sandal'))
+    
+    # user-defined function
+    def myYear(date):
+        return int(date[:4])
+    
+    # Open a database connection, here we use an in memory DB
+    
+    with sl.connect(":memory:") as con: # ':memory:' indicates that our database will be temporary and maintained in the program's memory space
+    
+        # Now we obtain our cursor
+        cur = con.cursor()   
+        
+        # First we create the table
+        cur.execute(createSQL)
+        
+        # Now populate the table using all items
+        cur.executemany("INSERT INTO myProducts VALUES(?, ?, ?, ?)", items) 
+        # two kinds of placeholders for holding value:
+        # 1. put ? as a placeholder wherever you want to use a value
+        # 2. use named placeholder starting with ":" like ":name", 
+        # e.g. cur.execute("INSERT INTO myProducts VALUES(:id, :price, :sdate, :desc)", {"id" : item[0], "price" : item[1], "sdate" : item[2], "desc" : item[3]})
+        
+        con.create_function("fYear", 1, myYear) # user-defined function
+        
+        for row in cur.execute('SELECT fYear(stockDate) FROM myProducts'): # apply function in a query
+            print(row)
+    ```
 
 - reference
     - http://nbviewer.ipython.org/github/INFO490/spring2015/blob/master/week11/dbNpy.ipynb
     - https://docs.python.org/3.4/library/sqlite3.html
+
+### Lesson 2: 
