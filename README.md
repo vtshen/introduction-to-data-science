@@ -1448,4 +1448,6 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
     - http://nbviewer.ipython.org/github/INFO490/spring2015/blob/master/week11/dbNpy.ipynb
     - https://docs.python.org/3.4/library/sqlite3.html
 
-### Lesson 2: 
+### Lesson 2: Advanced Python Database Programming
+
+- 
