@@ -1378,3 +1378,22 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
 
 - introduction to SQL data manipulation language
     - most are covered in references in Lesson 2, an additional reference: http://nbviewer.ipython.org/github/INFO490/spring2015/blob/master/week10/intro2sqldml.ipynb
+
+## Week 11: Advanced Data Persistence
+
+### Lesson 1: Python Database Programming
+
+- introduction
+    - previously, we use a dababase client tool to do operations on a database, now we are going to interact with databases using a python program. We will mainly focus on SQLite, for other databases, we can refer to related API.
+
+- using SQLite
+    - to work with a database within a Python program, we follow three steps
+        - establish a **connection** to a databse. in most cases, we need to connect to a remote database server through a network connection, for SQLite, we can work locally
+        - obtain a **cursor** from the database connection
+        - execute SQL commands by using the database cursor 
+    - example
+
+
+- reference
+    - http://nbviewer.ipython.org/github/INFO490/spring2015/blob/master/week11/dbNpy.ipynb
+    - https://docs.python.org/3.4/library/sqlite3.html
