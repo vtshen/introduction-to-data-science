@@ -1391,6 +1391,9 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
         - establish a **connection** to a databse. in most cases, we need to connect to a remote database server through a network connection, for SQLite, we can work locally
         - obtain a **cursor** from the database connection
         - execute SQL commands by using the database cursor
+    - useful methods
+        - `execute()`, `executemany()`, `executescript()`
+        - `fetchone()`, `fetchmany()`, `fetchall()`
     - example
     ```python
     # We define our Create Table SQL command
