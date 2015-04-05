@@ -1495,7 +1495,9 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
         - key-value stores
             - data is represented as a collection of key-value pairs
         - others
-    - reference 
-        - https://en.wikipedia.org/wiki/NoSQL
+    
+- reference 
+    - https://en.wikipedia.org/wiki/NoSQL
+    - http://planetcassandra.org/what-is-apache-cassandra/
+    - http://jimbojw.com/wiki/index.php?title=Understanding_Hbase_and_BigTable
 
-- 
