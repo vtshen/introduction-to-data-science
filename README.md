@@ -1553,4 +1553,17 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
         - http://nbviewer.ipython.org/github/INFO490/spring2015/blob/master/week12/dataexplore.ipynb
         - http://web.stanford.edu/~mwaskom/software/seaborn/tutorial.html
 
-### Lesson 3: 
+### Lesson 3: Statistical Exploration
+
+- Bayesian Methods for Programming
+    - frequentists vs Bayesians
+        - frequentists: probability = **long-run frequency** of events
+        - Bayesians: probability = belief of an event occuring, and belief is **modified based on evidence** (prior -> posterior)
+    - Bayesian framework
+    \begin{align}
+    P( A | X ) = & \frac{ P(X | A) P(A) } {P(X) } \\\\[5pt]
+    & \propto P(X | A) P(A)\;\; (\propto \text{is proportional to } )
+    \end{align}
+    - 
+- reference
+    - http://nbviewer.ipython.org/github/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/blob/master/Chapter1_Introduction/Chapter1.ipynb
