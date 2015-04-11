@@ -1535,4 +1535,22 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
             ```
             - we can save the data in `hdf` format by using `to_hdf()` function
         - details here: http://nbviewer.ipython.org/github/INFO490/spring2015/blob/master/week12/intro2de.ipynb
-        
+
+- pandas reading and writing HDF files
+    - http://pandas.pydata.org/pandas-docs/stable/io.html#io-hdf5
+
+### Lesson 2: Visual Exploration
+
+- introduction to data exploration
+    - here we see some visualization techniques of datasets using seaborn
+        - pairplot: compare different dimensions in the dataset
+        - box plot and violin plot
+        - histogram
+        - jointplot: see correlation of two variables
+        - FacetGrid
+        - HeatMaps
+    - reference
+        - http://nbviewer.ipython.org/github/INFO490/spring2015/blob/master/week12/dataexplore.ipynb
+        - http://web.stanford.edu/~mwaskom/software/seaborn/tutorial.html
+
+### Lesson 3: 
