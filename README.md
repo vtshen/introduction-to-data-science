@@ -1511,7 +1511,7 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
         - main idea
             - previously we have already construct a database using flights data in `2001.csv`. 
             - If we want to load all the data, we will probably run out of memory. 
-            - Even if we only want two columns named `arrivalDelay` and `departureDelay`, we will still use too much memory. Main reason is that the Pandas DataFrame needs to store the data in the format of `object` when there are "NA" value, which consumes much more memory than `int64` format. 
+            - Even if we only want two columns named `arrivalDelay` and `departureDelay`, we will still use too much memory. Main reason is that the Pandas DataFrame needs to store the data in the format of `object` when there are "NA" value, which **consumes much more memory** than `int64` format. 
             - so in order to save memory, we drop "NA" before reading into a DataFrame by using 
             ```python
             query = '''SELECT arrivalDelay, departureDelay 
@@ -1528,5 +1528,11 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
             data[['arrivalDelay']] = data[['arrivalDelay']].astype(np.int16)
             data[['departureDelay']] = data[['departureDelay']].astype(np.int16)
             ```
-            - 
+            - also we can read data directly from original csv file instead of the database by using 
+            ```python
+            newdata = pd.read_csv('/notebooks/i2ds/data/2001.csv', dtype=np.float, header=0, na_values=['NA'], usecols=(14, 15)) # use na_values to define NA data
+            newdata = newdata.dropna() # drop NA data in the dataFrame
+            ```
+            - we can save the data in `hdf` format by using `to_hdf()` function
         - details here: http://nbviewer.ipython.org/github/INFO490/spring2015/blob/master/week12/intro2de.ipynb
+        
