@@ -1501,3 +1501,32 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
     - http://planetcassandra.org/what-is-apache-cassandra/
     - http://jimbojw.com/wiki/index.php?title=Understanding_Hbase_and_BigTable
 
+## Week 12: Data Exploration
+
+### Lesson 1: Data Preparation
+
+- introduction to data preparation
+    - before we can explore and analyze a data set, we probably need to do some preparation work, because many data sets may contain lots of **dirty data** and are not ready to use, or they may be **in bad form** which would consume lots of system resources.
+    - example
+        - main idea
+            - previously we have already construct a database using flights data in `2001.csv`. 
+            - If we want to load all the data, we will probably run out of memory. 
+            - Even if we only want two columns named `arrivalDelay` and `departureDelay`, we will still use too much memory. Main reason is that the Pandas DataFrame needs to store the data in the format of `object` when there are "NA" value, which consumes much more memory than `int64` format. 
+            - so in order to save memory, we drop "NA" before reading into a DataFrame by using 
+            ```python
+            query = '''SELECT arrivalDelay, departureDelay 
+                FROM flights
+                WHERE arrivalDelay != 'NA' AND
+                    departureDelay != 'NA' ; '''
+            
+            with sl.connect(database) as con:
+                data = pd.read_sql(query, con)
+            ```
+            - to further save memory, we examine the data by `data.describe()` and find that it is enough to use `int16` format, so we convert data into this format by using 
+            ```python
+            import numpy as np
+            data[['arrivalDelay']] = data[['arrivalDelay']].astype(np.int16)
+            data[['departureDelay']] = data[['departureDelay']].astype(np.int16)
+            ```
+            - 
+        - details here: http://nbviewer.ipython.org/github/INFO490/spring2015/blob/master/week12/intro2de.ipynb
