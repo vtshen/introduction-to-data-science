@@ -1555,7 +1555,7 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
 
 ### Lesson 3: Statistical Exploration
 
-- Bayesian Methods for Programming
+- probabilistic programming
     - frequentists vs Bayesians
         - frequentists: probability = **long-run frequency** of events
         - Bayesians: probability = belief of an event occuring, and belief is **modified based on evidence** (prior -> posterior)
@@ -1564,6 +1564,9 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
     P( A | X ) = & \frac{ P(X | A) P(A) } {P(X) } \\\\[5pt]
     & \propto P(X | A) P(A)\;\; (\propto \text{is proportional to } )
     \end{align}
-    - 
+    - probability mass function and probability distribution function
+    - PyMC: Python library for programming Bayesian analysis
+        - 
+
 - reference
     - http://nbviewer.ipython.org/github/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/blob/master/Chapter1_Introduction/Chapter1.ipynb
