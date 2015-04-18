@@ -1587,4 +1587,18 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
     - k-nearest neighbors algorithms
         - one of the simplest machine learning algorithms, get classification or value based on information of its k-nearest neighbors (k is usually a small integer)
         - https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm
-    - 
+    - support vector machine
+        - https://en.wikipedia.org/wiki/Support_vector_machine
+        - http://nbviewer.ipython.org/github/jakevdp/sklearn_pycon2015/blob/master/notebooks/03.1-Classification-SVMs.ipynb
+    - desicion tree
+        - https://en.wikipedia.org/wiki/Decision_tree_learning
+    - random forest
+        - useful for large datasets
+        - build a set of decision trees and each uses a randomly selected amount of data and training attributes to make a prediction. the predictions from different trees are statistically combined to make a final prediction
+        - https://en.wikipedia.org/wiki/Random_forest
+        - http://nbviewer.ipython.org/github/jakevdp/sklearn_pycon2015/blob/master/notebooks/03.2-Regression-Forests.ipynb
+    - cross-validation
+        - So far we have simple quantified the performance of the different algorithms by comparing their performance on a single test data. This introduces a potential problem that certain training/testing data combinations may preferentially work best with one type of algorithm. To obtain a better characterization of the performance of a given algorithm we can employ cross-validation, where we **repeatedly select different training and testing data sets** from the original data and accumulate the **statistical measures** of the performance for each new sample.
+    - reference
+        - http://nbviewer.ipython.org/github/weiHelloWorld/introduction-to-data-science/blob/master/week13/intro2dm.ipynb
+
