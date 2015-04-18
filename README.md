@@ -1566,7 +1566,25 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
     \end{align}
     - probability mass function and probability distribution function
     - PyMC: Python library for programming Bayesian analysis
-        - 
 
 - reference
     - http://nbviewer.ipython.org/github/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/blob/master/Chapter1_Introduction/Chapter1.ipynb
+
+## Week 13: Introduction to Machine Learning
+
+### Lesson 1: Supervised Learning
+
+- introduction to data mining
+    - classification of machine learning techniques
+        - by problems
+            - classification
+            - regression
+            - dimensionality reduction
+            - clustering
+        - by methods
+            - supervised learning
+            - unsupervised learning
+    - k-nearest neighbors algorithms
+        - one of the simplest machine learning algorithms, get classification or value based on information of its k-nearest neighbors (k is usually a small integer)
+        - https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm
+    - 
