@@ -1651,6 +1651,16 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
             - k clusters are created by **associating each point with the nearest mean**
             - the centroid of each cluster becomes the new mean
             - repeat until convergence
+        - caveats
+            - the convergence is not guaranteed, so scikit-learn by default uses a large number of random initializations to find the best results
+        - examples
+            - classifying figures of digits
+                - we load digits figures and they can be divided into 10 clusters with accuracy of nearly 80%
+            - color compression
+                - initially there are $256^3$ colors, by clustering into 64 groups, we greatly reduce the size of color information
     - reference
         - http://nbviewer.ipython.org/github/INFO490/spring2015/blob/master/week13/intro2clust.ipynb
         - https://en.wikipedia.org/wiki/Cluster_analysis
+        - http://nbviewer.ipython.org/github/jakevdp/sklearn_pycon2015/blob/master/notebooks/04.2-Clustering-KMeans.ipynb
+
+        
