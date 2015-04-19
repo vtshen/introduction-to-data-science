@@ -1611,7 +1611,7 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
     - reference
         - http://nbviewer.ipython.org/github/INFO490/spring2015/blob/master/week13/intro2dr.ipynb
 
-- introduction to Principal Component Analysis
+- dimension reduction with Principal Component Analysis
     - basic idea
         - introduction example
             - use `sklearn.decomposition.PCA` to read a dataset to find the components with **maximum variance** (principal components)
@@ -1624,4 +1624,20 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
     - reference
         - http://nbviewer.ipython.org/github/jakevdp/sklearn_pycon2015/blob/master/notebooks/04.1-Dimensionality-PCA.ipynb
 
-- 
+- Decomposing signals in components (matrix factorization problems)
+    - principal component analysis
+        - exact PCA
+        - incremental PCA
+            - do not require to load all data into memory, allow partial computations
+        - approximate PCA
+            - greatly reduce time complexity
+        - kernal PCA
+            - an extension of PCA which achieves **non-linear dimensionality reduction** through the use of kernels
+        - SparsePCA and MiniBatchSparsePCA
+    - Truncated singular value decomposition and latent semantic analysis
+    - Dictionary Learning
+    - factor analysis
+    - independent component analysis (ICA)
+    - Non-negative matrix factorization (NMF or NNMF)
+    - reference
+        - http://scikit-learn.org/stable/modules/decomposition.html#dictionary-learning
