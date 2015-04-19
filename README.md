@@ -1613,6 +1613,15 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
 
 - introduction to Principal Component Analysis
     - basic idea
-        - use `sklearn.decomposition.PCA` to read a dataset to find the components with **maximum variance** (principal components)
-        - keep 95% of variance and data is **reduced by 1 dimension** and the size of data is **compressed by 50%**
-        - 
+        - introduction example
+            - use `sklearn.decomposition.PCA` to read a dataset to find the components with **maximum variance** (principal components)
+            - keep 95% of variance and data is **reduced by 1 dimension** and the size of data is **compressed by 50%**
+        - Application of PCA to Digits
+            - every digit figure has 64 pixels, which means 64 dimensions. 
+            - one way to see components is to think of them as different pixels, but in this way, we cannot get good approximation with a few number of components
+            - instead, we find **the best series of basis** to approximate the digit figure using machine learning techniques, so that we can get very good approximation with less than 6 components. The dimensionality is reduced from 64 to 6 or less.
+            - this is some kind of **lossy data compression**
+    - reference
+        - http://nbviewer.ipython.org/github/jakevdp/sklearn_pycon2015/blob/master/notebooks/04.1-Dimensionality-PCA.ipynb
+
+- 
