@@ -1605,5 +1605,14 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
 ### Lesson 2: Unsupervised Learning
 
 - introduction to dimension reduction
-    - for a large, multi-dimensional data set, one approach to simplify subsequent analysis is to **reduce the number of dimensions that must be processed**. In some cases, dimensions can be removed from analysis based on business logic. More generally, however, we can employ machine learning to seek out relationships between the original dimensions to identify new dimensions that better capture the inherent relationships within the data.
-    - The standard technique to perform this is known as **principal component analysis (PCA)**. Mathematically,we can derive PCA by using linear algebra to solve a set of linear equations. This process effectively rotates the data into a new set of dimensions, and by ranking the importance of the new dimensions, we can actually leverage fewer dimensions in machine learning algorithms. 
+    - introduction
+        - for a large, multi-dimensional data set, one approach to simplify subsequent analysis is to **reduce the number of dimensions that must be processed**. In some cases, dimensions can be removed from analysis based on business logic. More generally, however, we can employ machine learning to seek out relationships between the original dimensions to identify new dimensions that better capture the inherent relationships within the data.
+        - The standard technique to perform this is known as **principal component analysis (PCA)**. Mathematically,we can derive PCA by using linear algebra to solve a set of linear equations. This process effectively rotates the data into a new set of dimensions, and by ranking the importance of the new dimensions, we can actually leverage fewer dimensions in machine learning algorithms. 
+    - reference
+        - http://nbviewer.ipython.org/github/INFO490/spring2015/blob/master/week13/intro2dr.ipynb
+
+- introduction to Principal Component Analysis
+    - basic idea
+        - use `sklearn.decomposition.PCA` to read a dataset to find the components with **maximum variance** (principal components)
+        - keep 95% of variance and data is **reduced by 1 dimension** and the size of data is **compressed by 50%**
+        - 
