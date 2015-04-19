@@ -1641,3 +1641,16 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
     - Non-negative matrix factorization (NMF or NNMF)
     - reference
         - http://scikit-learn.org/stable/modules/decomposition.html#dictionary-learning
+
+### Lesson 3: Clustering
+
+- introduction to clustering
+    - k-means algorithm
+        - basic idea
+            - select k initial means (based on experience or randomly)
+            - k clusters are created by **associating each point with the nearest mean**
+            - the centroid of each cluster becomes the new mean
+            - repeat until convergence
+    - reference
+        - http://nbviewer.ipython.org/github/INFO490/spring2015/blob/master/week13/intro2clust.ipynb
+        - https://en.wikipedia.org/wiki/Cluster_analysis
