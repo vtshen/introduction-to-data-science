@@ -1663,4 +1663,23 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
         - https://en.wikipedia.org/wiki/Cluster_analysis
         - http://nbviewer.ipython.org/github/jakevdp/sklearn_pycon2015/blob/master/notebooks/04.2-Clustering-KMeans.ipynb
 
-        
+## Week 14: Introduction to Cloud Computing
+
+### Lesson 1: Introduction to Cloud Computing
+
+- Introduction to Cloud Computing with Docker
+    - docker overview
+        - docker daemon process
+        - docker images
+        - docker containers
+            - a docker container can run in either detached mode (in the background) or foreground mode (through network connection or shared volumes)
+    - docker volumes
+        - mount a volume from host to docker container
+        ```bash
+        sudo docker tag sequenceiq/hadoop-ubuntu:2.6.0 had # add a tag to simplify typing
+        sudo docker run -it -v /data:/file had /bin/bash # mount /data in host to /file in the container
+        ```
+        - reference
+            - http://docs.docker.com/userguide/dockervolumes/
+    - reference
+        - http://nbviewer.ipython.org/github/INFO490/spring2015/blob/master/week14/intro2cloud.ipynb
