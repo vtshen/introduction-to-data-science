@@ -1702,4 +1702,23 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
     - type of cloud computing
         -  Infrastructure as a Service (IaaS), Platform as a Service (PaaS), Software as a Service (SaaS).
     - reference
-        - http://aws.amazon.com/what-is-cloud-computing/
+        - http://aws.amazon.com/what-is-cloud-computing/ (general introduction)
+        - https://aws.amazon.com/articles/Python/3998 (using python to work with AWS)
+
+### Lesson 2: Running Containers in the Cloud
+
+- introduction to Google Cloud SDK
+    - preparation work
+        - `docker pull google/cloud-sdk`
+        - login with google account
+        - `docker pull sequenceiq/hadoop-ubuntu:2.6.0`
+    - setting up virtual machine on Google compute engine
+        - see reference for details
+    - reference
+        - https://github.com/INFO490/spring2015/blob/master/week14/README.md (preparation)
+        - http://nbviewer.ipython.org/github/INFO490/spring2015/blob/master/week14/intro2gc.ipynb (detailed steps on how to set up virtual machines on Google compute engine)
+        - https://cloud.google.com/compute/docs/ (official introduction)
+
+### Lesson 3: Introduction to Hadoop
+
+- 
