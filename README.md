@@ -1681,5 +1681,25 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
         ```
         - reference
             - http://docs.docker.com/userguide/dockervolumes/
+    - linking containers
+    - advanced docker commands
+    - docker resource usage
+    - docker cleanup
+        - `sudo docker rm $(sudo docker ps -a -q)`
     - reference
         - http://nbviewer.ipython.org/github/INFO490/spring2015/blob/master/week14/intro2cloud.ipynb
+
+- introduction to cloud computing by Amazon
+    - how does AWS work?
+        - get access to servers, storage, databases, apps over the internet
+    - advantages
+        - Trade capital expense for variable expense
+        - Benefit from massive economies of scale
+        - Stop guessing capacity
+        - Increase speed and agility
+        - Stop spending money on running and maintaining data centers
+        - Go global in minutes
+    - type of cloud computing
+        -  Infrastructure as a Service (IaaS), Platform as a Service (PaaS), Software as a Service (SaaS).
+    - reference
+        - http://aws.amazon.com/what-is-cloud-computing/
