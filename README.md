@@ -1683,6 +1683,17 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
             - http://docs.docker.com/userguide/dockervolumes/
     - linking containers
     - advanced docker commands
+        - `cp`: used to copy data into a running Docker container from the host operating system.
+        - `history`: displays the history of a Docker image.
+        - `info`: displays system-wide docker information.
+        - `restart`: used to restart a stopped container.
+        - `rm`: remove docker container, use -f flag to force removal
+        - `rmi`: remove a Docker image, use the -f flag to force removal
+        - `search`: search the Docker official registry for specific Docker images.
+        - `stats`: used to monitor the system resources used by a running container.
+        - `stop`: used to stop a running Docker container.
+        - `tag`: used to add tags, like a new, human-readable name to a image or container.
+        - `top`: used to monitor usage of a running container.
     - docker resource usage
     - docker cleanup
         - `sudo docker rm $(sudo docker ps -a -q)`
@@ -1733,5 +1744,4 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
         - use Hadoop streaming to do map/reduce processing
     - reference
         - http://nbviewer.ipython.org/github/INFO490/spring2015/blob/master/week14/intro2dh.ipynb
-
-- 
+        
