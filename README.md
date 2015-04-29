@@ -1714,11 +1714,24 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
         - `docker pull sequenceiq/hadoop-ubuntu:2.6.0`
     - setting up virtual machine on Google compute engine
         - see reference for details
+    - using virtual machines on Google compute engine
+        - two ways
+            - set up SSH connection using `google/cloud-sdk`
+            - directly get access from the google developer console "VM instances" page
     - reference
         - https://github.com/INFO490/spring2015/blob/master/week14/README.md (preparation)
         - http://nbviewer.ipython.org/github/INFO490/spring2015/blob/master/week14/intro2gc.ipynb (detailed steps on how to set up virtual machines on Google compute engine)
         - https://cloud.google.com/compute/docs/ (official introduction)
 
 ### Lesson 3: Introduction to Hadoop
+
+- introduction to Hadoop
+    - basic idea
+        - write mapper and reducer programs for a specific problem (e.g. word count problem)
+        - running Hadoop within the docker image `sequenceiq/hadoop-ubuntu:2.6.0`
+        - load data into the HDFS (Hadoop Distributed File System) by using `$HADOOP_PREFIX/bin/hdfs dfs` commands
+        - use Hadoop streaming to do map/reduce processing
+    - reference
+        - http://nbviewer.ipython.org/github/INFO490/spring2015/blob/master/week14/intro2dh.ipynb
 
 - 
