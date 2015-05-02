@@ -1745,3 +1745,23 @@ periods = PeriodIndex([Period('2012-01'), Period('2012-02'), Period('2012-03')])
     - reference
         - http://nbviewer.ipython.org/github/INFO490/spring2015/blob/master/week14/intro2dh.ipynb
         
+## Week 15: Introduction to Python High Performance Computing
+
+### Lesson: Introduction to Python High Performance Computing
+
+- Optimizing Python Performance
+    - introduction
+        - warning: one should not worry about optimization until it has been **shown to be necessary**
+    - related Python modules
+        - `threading` module
+            - we can use `threading.Thread()` to create a `Thread` object with a specific name and a function to execute and then start it
+        - `multiprocessing` module
+            - the standard Python interpreter only allows one thread to execute Python code at a time, this si called Global Interpreter Lock (GIL). One way to circumvent it is to use **multiple Python interpreters** that each runs in their own process
+            - these processes all share the same Python code (which needs to create other processes), so how can we avoid the infinite loop of creating processes? by specifying `if __name__ = '__main__' `, so that only `__main__` process creates other processes
+    - IPython cluster
+    - third-party Python tools
+        - Numba
+        - PYPY
+        - Cython
+    - reference
+        - http://nbviewer.ipython.org/github/INFO490/spring2015/blob/master/week15/pyhpc.ipynb
