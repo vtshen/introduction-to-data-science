@@ -1,0 +1,210 @@
+
+Script started on Wed 29 Apr 2015 02:59:23 PM UTC
+c': sudo docker run -it -v /data/airline:/airline hadoop /etc/bootstrap.[1@sk': sudo docker run -it -v /data/airline:/airline hadoop /etc/bootstrap[1@.e': sudo docker run -it -v /data/airline:/airline hadoop /etc/bootstra[1@pr': sudo docker run -it -v /data/airline:/airline hadoop /etc/bootstr[1@a ': sudo docker run -it -v /data/airline:/airline hadoop /etc/bootst[1@rp': sudo docker pull sequenceiq/hadoop-ubuntu:2.6.0
+]0;wei_herbert_chen_gmail_com@fisiksnju: ~wei_herbert_chen_gmail_com@fisiksnju:~$ sudo docker pull sequenceiq/hadoop-ubuntu:2.6.0
+Pulling repository sequenceiq/hadoop-ubuntu
+
+0d7de818e185: Pulling dependent layers 
+511136ea3c5a: Download complete 
+27d47432a69b: Download complete 
+5f92234dcf1e: Download complete 
+51a9c7c1f8bb: Download complete 
+5ba9dab47459: Download complete 
+3da3564cf449: Download complete 
+5eee14f1267d: Download complete 
+2fecf1668434: Download complete 
+6390b1313539: Download complete 
+19508257bbc4: Download complete 
+7f09538bd6f7: Download complete 
+bfbb00044784: Download complete 
+9938df5d29be: Download complete 
+04b5d6891f0f: Download complete 
+9d1beb0aa664: Download complete 
+26d4110e18a6: Download complete 
+845716b3c987: Download complete 
+3067e379de15: Download complete 
+7de972f79e77: Download complete 
+64db2173bd2c: Download complete 
+03e001e5e954: Download complete 
+e59580e0f7f2: Download complete 
+e2b100f260b2: Download complete 
+4b65dd649742: Download complete 
+fe95b729727e: Download complete 
+fa3ed72ca4ae: Download complete 
+8087b9d8c263: Download complete 
+e898850a34c5: Download complete 
+6ccf5d1ed2d2: Download complete 
+981c23b179ef: Download complete 
+43ace5aae89a: Download complete 
+9d982b3c6d07: Download complete 
+51ee2fd753e6: Download complete 
+7fe3e56483ed: Download complete 
+be3f82cd6f88: Download complete 
+a196648cf306: Download complete 
+f2940d9ce865: Download complete 
+b073c07249dd: Download complete 
+f3dbf1b259ad: Download complete 
+fca12af49400: Download complete 
+ccf54db1c83e: Download complete 
+a7de0060b0d5: Download complete 
+ed233da4f048: Download complete 
+19fff45dd116: Download complete 
+b93e3a325fdb: Download complete 
+260e3e417fa4: Download complete 
+38e79b784c95: Download complete 
+13fd04f09ddc: Download complete 
+3531e063e838: Download complete 
+433947c32ad4: Download complete 
+be83f19bd2ca: Download complete 
+e58b2d14706c: Download complete 
+p
+]0;wei_herbert_chen_gmail_com@fisiksnju: ~wei_herbert_chen_gmail_com@fisiksnju:~$ sudo docker images
+REPOSITORY                 TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+lcdm/info490               latest              b80ecf8d87e2        2 weeks ago         740.3 MB
+sequenceiq/hadoop-ubuntu   2.6.0               0d7de818e185        9 weeks ago         1.09 GB
+hadoop                     latest              0d7de818e185        9 weeks ago         1.09 GB
+ /etc/bootstrap.sh -bash
+/
+[ OK ]
+Starting namenodes on [29b2f8156881]
+29b2f8156881: starting namenode, logging to /usr/local/hadoop/logs/hadoop-root-namenode-29b2f8156881.out
+localhost: starting datanode, logging to /usr/local/hadoop/logs/hadoop-root-datanode-29b2f8156881.out
+Starting secondary namenodes [0.0.0.0]
+0.0.0.0: starting secondarynamenode, logging to /usr/local/hadoop/logs/hadoop-root-secondarynamenode-29b2f8156881.out
+starting yarn daemons
+starting resourcemanager, logging to /usr/local/hadoop/logs/yarn--resourcemanager-29b2f8156881.out
+localhost: starting nodemanager, logging to /usr/local/hadoop/logs/yarn-root-nodemanager-29b2f8156881.out
+root@29b2f8156881:/# # 
+15/04/29 15:03:57 INFO fs.TrashPolicyDefault: Namenode trash configuration: Deletion interval = 0 minutes, Emptier interval = 0 minutes.
+root@29b2f8156881:/# $HADOOP_PREFIX/bin/hdfs dfs -mkdir -p wc/in
+root@29b2f8156881:/# $HADOOP_PREFIX/bin/hdfs dfs -put 2001.csv wc/in/2001.csv
+put: `2001.csv': No such file or directory
+root@29b2f8156881:/# cd /airline
+root@29b2f8156881:/airline# cd /airline$HADOOP_PREFIX/bin/hdfs dfs -put 2001.csv wc/in/2001.csv
+/org/apache/hadoop/hadoop-streaming/2.6.0/hadoop-streaming-2.6.0.jar
+--2015-04-29 15:05:35--  http://central.maven.org/maven2/org/apache/hadoop/hadoop-streaming/2.6.0/hadoop-streaming-2.6.0.jar
+Resolving central.maven.org (central.maven.org)... 23.235.39.209
+Connecting to central.maven.org (central.maven.org)|23.235.39.209|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 104979 (103K) [application/java-archive]
+Saving to: './hs.jar'
+
+100%[==================================================>] 104,979     --.-K/s   in 0.09s   
+
+2015-04-29 15:05:35 (1.12 MB/s) - './hs.jar' saved [104979/104979]
+
+_reducer.py -cmdenv PYTHONIOENCODING=latin-1
+packageJobJar: [/tmp/hadoop-unjar5144524088635120799/] [] /tmp/streamjob5503092659332870874.jar tmpDir=null
+15/04/29 15:06:04 INFO client.RMProxy: Connecting to ResourceManager at /0.0.0.0:8032
+15/04/29 15:06:05 INFO client.RMProxy: Connecting to ResourceManager at /0.0.0.0:8032
+15/04/29 15:06:06 INFO mapred.FileInputFormat: Total input paths to process : 1
+15/04/29 15:06:06 INFO mapreduce.JobSubmitter: number of splits:5
+15/04/29 15:06:06 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1430319780332_0001
+15/04/29 15:06:07 INFO impl.YarnClientImpl: Submitted application application_1430319780332_0001
+15/04/29 15:06:07 INFO mapreduce.Job: The url to track the job: http://29b2f8156881:8088/proxy/application_1430319780332_0001/
+15/04/29 15:06:07 INFO mapreduce.Job: Running job: job_1430319780332_0001
+15/04/29 15:06:20 INFO mapreduce.Job: Job job_1430319780332_0001 running in uber mode : false
+15/04/29 15:06:20 INFO mapreduce.Job:  map 0% reduce 0%
+15/04/29 15:07:03 INFO mapreduce.Job:  map 1% reduce 0%
+15/04/29 15:07:06 INFO mapreduce.Job:  map 3% reduce 0%
+15/04/29 15:07:09 INFO mapreduce.Job:  map 8% reduce 0%
+15/04/29 15:07:13 INFO mapreduce.Job:  map 14% reduce 0%
+15/04/29 15:07:16 INFO mapreduce.Job:  map 20% reduce 0%
+15/04/29 15:07:19 INFO mapreduce.Job:  map 25% reduce 0%
+15/04/29 15:07:22 INFO mapreduce.Job:  map 30% reduce 0%
+15/04/29 15:07:25 INFO mapreduce.Job:  map 36% reduce 0%
+15/04/29 15:07:28 INFO mapreduce.Job:  map 41% reduce 0%
+15/04/29 15:07:31 INFO mapreduce.Job:  map 45% reduce 0%
+15/04/29 15:07:33 INFO mapreduce.Job:  map 52% reduce 0%
+15/04/29 15:07:35 INFO mapreduce.Job:  map 55% reduce 0%
+15/04/29 15:07:38 INFO mapreduce.Job:  map 59% reduce 0%
+15/04/29 15:07:41 INFO mapreduce.Job:  map 63% reduce 0%
+15/04/29 15:07:44 INFO mapreduce.Job:  map 66% reduce 0%
+15/04/29 15:07:47 INFO mapreduce.Job:  map 69% reduce 0%
+15/04/29 15:07:50 INFO mapreduce.Job:  map 70% reduce 0%
+15/04/29 15:07:51 INFO mapreduce.Job:  map 72% reduce 0%
+15/04/29 15:07:54 INFO mapreduce.Job:  map 73% reduce 0%
+15/04/29 15:08:04 INFO mapreduce.Job:  map 80% reduce 0%
+15/04/29 15:08:05 INFO mapreduce.Job:  map 93% reduce 0%
+15/04/29 15:08:06 INFO mapreduce.Job:  map 100% reduce 0%
+15/04/29 15:08:15 INFO mapreduce.Job:  map 100% reduce 67%
+15/04/29 15:08:18 INFO mapreduce.Job:  map 100% reduce 75%
+15/04/29 15:08:21 INFO mapreduce.Job:  map 100% reduce 84%
+15/04/29 15:08:24 INFO mapreduce.Job:  map 100% reduce 92%
+15/04/29 15:08:27 INFO mapreduce.Job:  map 100% reduce 100%
+15/04/29 15:08:29 INFO mapreduce.Job: Job job_1430319780332_0001 completed successfully
+15/04/29 15:08:29 INFO mapreduce.Job: Counters: 50
+	File System Counters
+		FILE: Number of bytes read=47742257
+		FILE: Number of bytes written=96142515
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=600428351
+		HDFS: Number of bytes written=2148
+		HDFS: Number of read operations=18
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=2
+	Job Counters 
+		Killed map tasks=1
+		Launched map tasks=6
+		Launched reduce tasks=1
+		Data-local map tasks=6
+		Total time spent by all maps in occupied slots (ms)=506540
+		Total time spent by all reduces in occupied slots (ms)=49583
+		Total time spent by all map tasks (ms)=506540
+		Total time spent by all reduce tasks (ms)=49583
+		Total vcore-seconds taken by all map tasks=506540
+		Total vcore-seconds taken by all reduce tasks=49583
+		Total megabyte-seconds taken by all map tasks=518696960
+		Total megabyte-seconds taken by all reduce tasks=50772992
+	Map-Reduce Framework
+		Map input records=5967781
+		Map output records=5967781
+		Map output bytes=35806689
+		Map output materialized bytes=47742281
+		Input split bytes=505
+		Combine input records=0
+		Combine output records=0
+		Reduce input groups=232
+		Reduce shuffle bytes=47742281
+		Reduce input records=5967781
+		Reduce output records=232
+		Spilled Records=11935562
+		Shuffled Maps =5
+		Failed Shuffles=0
+		Merged Map outputs=5
+		GC time elapsed (ms)=3410
+		CPU time spent (ms)=62170
+		Physical memory (bytes) snapshot=1264300032
+		Virtual memory (bytes) snapshot=4227940352
+		Total committed heap usage (bytes)=896712704
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=600427846
+	File Output Format Counters 
+		Bytes Written=2148
+15/04/29 15:08:29 INFO streaming.StreamJob: Output directory: wc/out
+ 2 | tail -10
+BOS	133013
+LAS	136107
+MSP	142507
+DTW	148767
+STL	162187
+PHX	184323
+LAX	224984
+ATL	251671
+DFW	312036
+ORD	341284
+root@29b2f8156881:/airline# exit
+exit
+]0;wei_herbert_chen_gmail_com@fisiksnju: ~wei_herbert_chen_gmail_com@fisiksnju:~$ exit
+exit
+
+Script done on Wed 29 Apr 2015 03:10:02 PM UTC
